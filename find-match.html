@@ -74,42 +74,54 @@
               </div>
 
               <div>
-                <label class="label">Select Date</label>
-                <div class="field">25 March 2026</div>
+                <label class="label" for="match-date">Select Date</label>
+                <label class="field fm-date-field" for="match-date">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <rect x="1" y="3" width="14" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="1" y1="7" x2="15" y2="7" stroke="currentColor" stroke-width="1.5"/>
+                    <line x1="5" y1="1" x2="5" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    <line x1="11" y1="1" x2="11" y2="5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  </svg>
+                  <span id="date-display" class="fm-picker-value">25 March 2026</span>
+                  <input id="match-date" type="date" class="fm-hidden-input" value="2026-03-25" onchange="updateDateDisplay(this)" />
+                  <span class="time-picker-arrow">›</span>
+                </label>
               </div>
 
               <div class="create-row">
                 <div class="create-col">
-                  <label class="label">Start Time</label>
-                  <div class="time-picker-field">
+                  <label class="label" for="start-time">Start Time</label>
+                  <label class="time-picker-field" for="start-time">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
                       <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
-                    <span class="time-picker-value">7:00 PM</span>
+                    <span id="start-display" class="time-picker-value">7:00 PM</span>
+                    <input id="start-time" type="time" class="fm-hidden-input" value="19:00" onchange="updateTimeDisplay('start-display', this.value); updateDuration()" />
                     <span class="time-picker-arrow">›</span>
-                  </div>
+                  </label>
                 </div>
                 <div class="create-col">
-                  <label class="label">End Time</label>
-                  <div class="time-picker-field">
+                  <label class="label" for="end-time">End Time</label>
+                  <label class="time-picker-field" for="end-time">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                       <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
                       <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
-                    <span class="time-picker-value">9:00 PM</span>
+                    <span id="end-display" class="time-picker-value">9:00 PM</span>
+                    <input id="end-time" type="time" class="fm-hidden-input" value="21:00" onchange="updateTimeDisplay('end-display', this.value); updateDuration()" />
                     <span class="time-picker-arrow">›</span>
-                  </div>
+                  </label>
                 </div>
               </div>
 
-              <div class="duration-hint">
+              <div id="duration-hint" class="duration-hint">
                 <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
                   <circle cx="7.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
                   <path d="M7.5 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                   <line x1="5.5" y1="1" x2="9.5" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
-                <span>2 hours session</span>
+                <span id="duration-text">2 hours session</span>
               </div>
 
               <div>
