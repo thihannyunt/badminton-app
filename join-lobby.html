@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Court Connect - Join Lobby</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   </head>
   <body>
     <main class="app-shell">
       <section class="phone">
         <header class="status-bar">
-          <span>9:41</span>
-          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="status-time">9:41</span>
+          <div class="status-notch" aria-hidden="true"></div>
+          <div class="status-icons" aria-hidden="true">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
+              <rect x="0" y="5" width="3" height="6" rx="1" opacity="0.4"/>
+              <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" opacity="0.7"/>
+              <rect x="9" y="0" width="3" height="11" rx="1"/>
+            </svg>
+            <svg width="24" height="11" viewBox="0 0 24 11" fill="none">
+              <rect x="0.5" y="0.5" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="2" y="2" width="15" height="7" rx="2" fill="currentColor"/>
+              <path d="M22 3.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
         </header>
 
         <section class="screen screen-compact">
           <div class="top-row">
-            <a class="back-button" href="lobby-hub.html" aria-label="Back"></a>
+            <a class="back-button" href="lobby-hub.html" aria-label="Back">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M8 10L4 6l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
             <div>
               <h1 class="screen-title">Join Lobby</h1>
               <p class="subtitle">Enter a code or paste a link to join.</p>
@@ -26,50 +43,48 @@
           <div class="sheet tight sheet-compact">
             <div class="stack stack-compact">
 
-              <!-- Invite code entry -->
               <div class="join-lobby-card">
                 <p class="join-lobby-label">Enter Invite Code</p>
                 <p class="meta-note">Ask your friend for the 6-digit code from their invite.</p>
                 <div class="join-code-row">
                   <input
                     class="join-code-input"
-                    id="codeInput"
                     type="text"
                     maxlength="6"
                     placeholder="e.g. CC1234"
-                    oninput="onCodeInput(this)"
                   />
-                  <button class="join-code-btn" id="lookupBtn" onclick="lookupLobby()" disabled>Look Up</button>
+                  <button class="join-code-btn">Look Up</button>
                 </div>
               </div>
 
-              <!-- Divider -->
-              <div class="join-divider"><span>or</span></div>
+              <div class="join-divider">
+                <div class="join-divider-line"></div>
+                <span>or</span>
+                <div class="join-divider-line"></div>
+              </div>
 
-              <!-- Paste link -->
               <div class="join-lobby-card">
                 <p class="join-lobby-label">Paste Invite Link</p>
                 <p class="meta-note">Paste the full link sent to you by the lobby host.</p>
-                <div class="field join-link-field" contenteditable="true" id="linkInput" oninput="onLinkInput()">courtconnect.com/session/</div>
-                <button class="primary-button booking-btn join-link-btn-mt" id="joinLinkBtn" onclick="joinViaLink()" disabled>Join via Link</button>
+                <div class="field join-link-field">courtconnect.com/session/</div>
+                <button class="primary-button booking-btn join-link-btn-mt">Join via Link</button>
               </div>
 
-              <!-- Lobby preview (hidden until found) -->
-              <div id="lobbyPreview" class="lobby-list-card" style="display:none;">
+              <div class="lobby-list-card">
                 <div class="lobby-list-top">
                   <div>
-                    <p class="lobby-list-name" id="previewName">Tuesday Smashers</p>
-                    <p class="meta-note" id="previewMeta">25 Mar 2026 · 7:00 PM – 9:00 PM</p>
+                    <p class="lobby-list-name">Tuesday Smashers</p>
+                    <p class="meta-note">25 Mar 2026 · 7:00 PM – 9:00 PM</p>
                   </div>
                   <span class="result-badge win">Found</span>
                 </div>
                 <div class="lobby-list-meta">
-                  <span>👥 Doubles</span>
-                  <span>⚡ Intermediate</span>
-                  <span id="previewSlots">2 / 4 joined</span>
+                  <span>Doubles</span>
+                  <span>Intermediate</span>
+                  <span>2 / 4 joined</span>
                 </div>
                 <p class="join-lobby-label join-preview-label">Your Name</p>
-                <input class="join-name-input" id="nameInput" type="text" placeholder="Enter your name to join" />
+                <input class="join-name-input" type="text" placeholder="Enter your name to join" />
                 <a class="primary-button join-preview-confirm" href="session-lobby.html">Confirm &amp; Join</a>
               </div>
 
@@ -87,7 +102,12 @@
           <a class="nav-item nav-center-fab" href="bookings.html">
             <span class="nav-fab-circle">
               <span class="nav-icon-wrap">
-                <span class="nav-icon nav-booking"></span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="2" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="6" y1="2" x2="6" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
                 <span class="nav-dot-badge">2</span>
               </span>
             </span>
@@ -103,29 +123,5 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
-
-    <script>
-      function onCodeInput(el) {
-        el.value = el.value.toUpperCase();
-        document.getElementById('lookupBtn').disabled = el.value.length < 6;
-      }
-
-      function onLinkInput() {
-        const val = document.getElementById('linkInput').textContent.trim();
-        document.getElementById('joinLinkBtn').disabled = val.length < 25;
-      }
-
-      function showPreview() {
-        document.getElementById('lobbyPreview').style.display = '';
-      }
-
-      function lookupLobby() {
-        showPreview();
-      }
-
-      function joinViaLink() {
-        showPreview();
-      }
-    </script>
   </body>
 </html>

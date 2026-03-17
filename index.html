@@ -12,15 +12,22 @@
       <section class="phone">
         <header class="status-bar">
           <span class="status-time">9:41</span>
+          <div class="status-notch" aria-hidden="true"></div>
           <div class="status-icons" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
+              <rect x="0" y="5" width="3" height="6" rx="1" opacity="0.4"/>
+              <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" opacity="0.7"/>
+              <rect x="9" y="0" width="3" height="11" rx="1"/>
+            </svg>
+            <svg width="24" height="11" viewBox="0 0 24 11" fill="none">
+              <rect x="0.5" y="0.5" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="2" y="2" width="15" height="7" rx="2" fill="currentColor"/>
+              <path d="M22 3.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
           </div>
         </header>
 
         <section class="screen hero-screen">
-
 
           <div class="hero-copy">
             <p class="eyebrow">Court Connect</p>
@@ -37,12 +44,26 @@
               <p>Find a skill-matched game or set up a private session with friends.</p>
               <div class="home-action-grid">
                 <a class="home-action-btn primary" href="find-match.html">
-                  <span class="home-action-icon">🏸</span>
+                  <span class="home-action-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <ellipse cx="9" cy="8" rx="5" ry="6" stroke="currentColor" stroke-width="1.5"/>
+                      <line x1="9" y1="14" x2="12" y2="18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                      <line x1="6" y1="5" x2="12" y2="11" stroke="currentColor" stroke-width="1"/>
+                      <line x1="4" y1="8" x2="14" y2="8" stroke="currentColor" stroke-width="1"/>
+                    </svg>
+                  </span>
                   <span class="home-action-label">Find Match</span>
                   <span class="home-action-sub">Quick matchmaking</span>
                 </a>
                 <a class="home-action-btn ghost" href="lobby-hub.html">
-                  <span class="home-action-icon">👥</span>
+                  <span class="home-action-icon">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                      <circle cx="8" cy="7" r="3" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M3 17c0-3 2-5 5-5h2c3 0 5 2 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      <circle cx="14" cy="6" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M16 15c1.5.3 3 1.2 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                  </span>
                   <span class="home-action-label">Create Lobby</span>
                   <span class="home-action-sub">Private session</span>
                 </a>
@@ -52,7 +73,6 @@
             <div class="shuttle-shape" aria-hidden="true"></div>
           </section>
 
-          
         </section>
 
         <nav class="bottom-nav" aria-label="Bottom navigation">
@@ -65,7 +85,12 @@
           <a class="nav-item nav-center-fab" href="bookings.html">
             <span class="nav-fab-circle">
               <span class="nav-icon-wrap">
-                <span class="nav-icon nav-booking"></span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="2" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="6" y1="2" x2="6" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
                 <span class="nav-dot-badge">2</span>
               </span>
             </span>

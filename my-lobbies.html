@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Court Connect - My Lobbies</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   </head>
   <body>
     <main class="app-shell">
       <section class="phone">
         <header class="status-bar">
-          <span>9:41</span>
-          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="status-time">9:41</span>
+          <div class="status-notch" aria-hidden="true"></div>
+          <div class="status-icons" aria-hidden="true">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
+              <rect x="0" y="5" width="3" height="6" rx="1" opacity="0.4"/>
+              <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" opacity="0.7"/>
+              <rect x="9" y="0" width="3" height="11" rx="1"/>
+            </svg>
+            <svg width="24" height="11" viewBox="0 0 24 11" fill="none">
+              <rect x="0.5" y="0.5" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="2" y="2" width="15" height="7" rx="2" fill="currentColor"/>
+              <path d="M22 3.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
         </header>
 
         <section class="screen screen-compact">
           <div class="top-row">
-            <a class="back-button" href="lobby-hub.html" aria-label="Back"></a>
+            <a class="back-button" href="lobby-hub.html" aria-label="Back">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M8 10L4 6l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
             <div>
               <h1 class="screen-title">My Lobbies</h1>
               <p class="subtitle">Lobbies you created.</p>
@@ -27,7 +44,6 @@
           <div class="sheet tight sheet-compact">
             <div class="stack stack-compact">
 
-              <!-- Active lobby -->
               <div class="lobby-list-card">
                 <div class="lobby-list-top">
                   <div>
@@ -37,8 +53,8 @@
                   <span class="result-badge win">Active</span>
                 </div>
                 <div class="lobby-list-meta">
-                  <span>👥 Doubles</span>
-                  <span>⚡ Intermediate</span>
+                  <span>Doubles</span>
+                  <span>Intermediate</span>
                   <span>2 / 4 joined</span>
                 </div>
                 <div class="lobby-list-avatars">
@@ -53,7 +69,6 @@
                 </div>
               </div>
 
-              <!-- Pending lobby -->
               <div class="lobby-list-card">
                 <div class="lobby-list-top">
                   <div>
@@ -63,8 +78,8 @@
                   <span class="result-badge">Pending</span>
                 </div>
                 <div class="lobby-list-meta">
-                  <span>🏸 Singles</span>
-                  <span>⚡ Advanced</span>
+                  <span>Singles</span>
+                  <span>Advanced</span>
                   <span>1 / 2 joined</span>
                 </div>
                 <div class="lobby-list-avatars">
@@ -77,7 +92,6 @@
                 </div>
               </div>
 
-              <!-- Create another -->
               <a class="ghost-button" href="create-session.html">＋ Create Another Lobby</a>
 
             </div>
@@ -94,7 +108,12 @@
           <a class="nav-item nav-center-fab" href="bookings.html">
             <span class="nav-fab-circle">
               <span class="nav-icon-wrap">
-                <span class="nav-icon nav-booking"></span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="2" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="6" y1="2" x2="6" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
                 <span class="nav-dot-badge">2</span>
               </span>
             </span>
