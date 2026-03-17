@@ -56,18 +56,18 @@
                 <p class="join-lobby-label">Invite Code</p>
                 <p class="meta-note">Share this 6-digit code with your friends.</p>
                 <div class="invite-code-display">
-                  <span class="invite-code-text">CC7482</span>
-                  <button class="invite-action-btn">Copy</button>
+                  <span class="invite-code-text" id="invite-code">CC7482</span>
+                  <button class="invite-action-btn" id="copy-code-btn" onclick="copyInviteCode()">Copy</button>
                 </div>
-                <button class="invite-regen-btn">↻ Generate New Code</button>
+                <button class="invite-regen-btn" onclick="generateNewCode()">↻ Generate New Code</button>
               </div>
 
               <div class="invite-code-card">
                 <p class="join-lobby-label">Session Link</p>
                 <p class="meta-note">Or share the full link directly.</p>
                 <div class="invite-link-row">
-                  <div class="field link-box invite-link-field">courtconnect.com/session/CC7482</div>
-                  <button class="invite-action-btn">Copy</button>
+                  <div class="field link-box invite-link-field" id="invite-link">courtconnect.com/session/CC7482</div>
+                  <button class="invite-action-btn" id="copy-link-btn" onclick="copyInviteLink()">Copy</button>
                 </div>
               </div>
 
@@ -116,5 +116,6 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
+  <script src="./app.js"></script>
   </body>
 </html>

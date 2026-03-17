@@ -2695,3 +2695,67 @@ body {
     font-size: 48px;
   }
 }
+
+/* ── Match Finish Modal ── */
+.match-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+}
+
+.match-modal-overlay[hidden] {
+  display: none;
+}
+
+.match-modal-overlay.match-modal-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.match-modal {
+  background: var(--card);
+  border-radius: 24px;
+  padding: 36px 28px 28px;
+  width: calc(100% - 48px);
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+  transform: translateY(20px) scale(0.96);
+  transition: transform 0.25s ease;
+}
+
+.match-modal-overlay.match-modal-visible .match-modal {
+  transform: translateY(0) scale(1);
+}
+
+.match-modal-icon {
+  font-size: 52px;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.match-modal-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--teal);
+  margin: 0 0 8px;
+}
+
+.match-modal-msg {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+.match-modal-ok {
+  width: 100%;
+  margin-top: 0;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Court Connect - Profile</title>
+    <title>Court Connect - Edit Profile</title>
     <link rel="stylesheet" href="./styles.css" />
     <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   </head>
@@ -28,63 +28,32 @@
         </header>
 
         <section class="screen screen-compact">
-          <div class="profile-hero">
-            <div class="profile-avatar-lg"></div>
-            <div class="profile-hero-info">
-              <h1 class="screen-title">Smiths Corisoun</h1>
-              <p class="subtitle">Intermediate · Badminton Player</p>
+          <div class="top-row">
+            <a class="back-button" href="profile.html" aria-label="Back">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M8 10L4 6l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+            <div>
+              <h1 class="screen-title">Edit Profile</h1>
+              <p class="subtitle">Update your name, photo, and preferences.</p>
             </div>
           </div>
 
           <div class="sheet tight sheet-compact">
             <div class="stack stack-compact">
 
-              <div class="profile-stats-row">
-                <div class="profile-stat">
-                  <strong>24</strong>
-                  <span>Matches</span>
+              <div class="coming-soon-card">
+                <div class="coming-soon-trophy">
+                  <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+                    <circle cx="22" cy="14" r="8" stroke="currentColor" stroke-width="2.5"/>
+                    <path d="M8 38c0-7.7 6.3-14 14-14s14 6.3 14 14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    <path d="M28 20l4-4m0 0l2-2m-2 2l2 2m-2-2l-2 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
                 </div>
-                <div class="profile-stat">
-                  <strong>4.8</strong>
-                  <span>Rating</span>
-                </div>
-                <div class="profile-stat">
-                  <strong>18</strong>
-                  <span>Wins</span>
-                </div>
+                <h2 class="coming-soon-title">Coming Soon</h2>
+                <p class="coming-soon-sub">Profile editing — including photo, display name, and skill preferences — will be available in a future update.</p>
               </div>
-
-              <div class="info-row">
-                <div>
-                  <strong>Skill Level</strong>
-                  <div class="meta-note">Intermediate</div>
-                </div>
-                <div class="option-chip active option-chip-tag">Intermediate</div>
-              </div>
-
-              <div>
-                <label class="label">Playstyle</label>
-                <div class="tag-grid">
-                  <div class="tag-chip active">Friendly</div>
-                  <div class="tag-chip active">Beginner Friendly</div>
-                  <div class="tag-chip">Strategic</div>
-                  <div class="tag-chip">Competitive</div>
-                </div>
-              </div>
-
-              <div class="list-card">
-                <strong>Recent Matches</strong>
-                <div class="list-item">
-                  <strong>Court 3 · 7:00 PM</strong>
-                  <span class="result-pill win">Won</span>
-                </div>
-                <div class="list-item">
-                  <strong>Court 1 · 6:00 PM</strong>
-                  <span class="result-pill">Lost</span>
-                </div>
-              </div>
-
-              <a class="primary-button" href="edit-profile.html">Edit Profile</a>
 
             </div>
           </div>

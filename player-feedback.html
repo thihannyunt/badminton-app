@@ -54,21 +54,21 @@
               <div>
                 <label class="label">Your Rating</label>
                 <div class="feedback-stars" aria-label="Star rating">
-                  <span class="fstar active">★</span>
-                  <span class="fstar active">★</span>
-                  <span class="fstar active">★</span>
-                  <span class="fstar active">★</span>
-                  <span class="fstar active">★</span>
+                  <span class="fstar active" onclick="setRating(this)">★</span>
+                  <span class="fstar active" onclick="setRating(this)">★</span>
+                  <span class="fstar active" onclick="setRating(this)">★</span>
+                  <span class="fstar active" onclick="setRating(this)">★</span>
+                  <span class="fstar active" onclick="setRating(this)">★</span>
                 </div>
               </div>
 
               <div>
                 <label class="label">Playstyle Tags</label>
                 <div class="tag-grid">
-                  <div class="tag-chip active">Friendly</div>
-                  <div class="tag-chip">Competitive</div>
-                  <div class="tag-chip active">Beginner Friendly</div>
-                  <div class="tag-chip">Strategic</div>
+                  <div class="tag-chip active" onclick="toggleTag(this)">Friendly</div>
+                  <div class="tag-chip" onclick="toggleTag(this)">Competitive</div>
+                  <div class="tag-chip active" onclick="toggleTag(this)">Beginner Friendly</div>
+                  <div class="tag-chip" onclick="toggleTag(this)">Strategic</div>
                 </div>
               </div>
 
@@ -119,5 +119,6 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
+  <script src="./app.js"></script>
   </body>
 </html>

@@ -51,10 +51,10 @@
                     <span>Alex</span>
                     <span>Ken</span>
                   </div>
-                  <div class="score-big">10</div>
+                  <div class="score-big" id="score-a">10</div>
                   <div class="score-btn-row">
-                    <button class="score-add-btn score-sub-btn">−</button>
-                    <button class="score-add-btn">+</button>
+                    <button class="score-add-btn score-sub-btn" onclick="adjustScore('a', -1)">−</button>
+                    <button class="score-add-btn" onclick="adjustScore('a', 1)">+</button>
                   </div>
                 </div>
 
@@ -69,10 +69,10 @@
                     <span>Sara</span>
                     <span>Mike</span>
                   </div>
-                  <div class="score-big team-b-score">8</div>
+                  <div class="score-big team-b-score" id="score-b">8</div>
                   <div class="score-btn-row">
-                    <button class="score-add-btn score-add-btn-b score-sub-btn-b">−</button>
-                    <button class="score-add-btn score-add-btn-b">+</button>
+                    <button class="score-add-btn score-add-btn-b score-sub-btn-b" onclick="adjustScore('b', -1)">−</button>
+                    <button class="score-add-btn score-add-btn-b" onclick="adjustScore('b', 1)">+</button>
                   </div>
                 </div>
               </div>
@@ -81,13 +81,13 @@
                 <div class="score-progress-wrap">
                   <span class="score-progress-label">A</span>
                   <div class="progress-bar score-progress-bar">
-                    <span style="width: 67%"></span>
+                    <span id="progress-a" style="width: 67%"></span>
                   </div>
                 </div>
                 <div class="score-progress-wrap">
                   <span class="score-progress-label">B</span>
                   <div class="progress-bar score-progress-bar score-progress-bar-b">
-                    <span style="width: 53%"></span>
+                    <span id="progress-b" style="width: 53%"></span>
                   </div>
                 </div>
               </div>
@@ -129,5 +129,17 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
+
+    <!-- Match Finish Modal -->
+    <div id="match-finish-modal" class="match-modal-overlay" aria-modal="true" role="dialog" aria-labelledby="match-modal-title" hidden>
+      <div class="match-modal">
+        <div class="match-modal-icon">🏆</div>
+        <h2 class="match-modal-title" id="match-modal-title">Match Finished!</h2>
+        <p class="match-modal-msg" id="match-modal-msg">Team A wins the match!</p>
+        <button class="primary-button match-modal-ok" onclick="closeMatchModal()">OK</button>
+      </div>
+    </div>
+
+  <script src="./app.js"></script>
   </body>
 </html>

@@ -46,7 +46,7 @@
               <div>
                 <label class="label">Match Type</label>
                 <div class="match-type-grid">
-                  <div class="match-type-card active">
+                  <div class="match-type-card active" onclick="selectMatchType(this)">
                     <span class="match-type-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <ellipse cx="10" cy="9" rx="5.5" ry="6.5" stroke="currentColor" stroke-width="1.5"/>
@@ -58,7 +58,7 @@
                     <strong class="match-type-name">Singles</strong>
                     <span class="match-type-desc">1 vs 1</span>
                   </div>
-                  <div class="match-type-card">
+                  <div class="match-type-card" onclick="selectMatchType(this)">
                     <span class="match-type-icon">
                       <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/>
@@ -115,9 +115,9 @@
               <div>
                 <label class="label">Skill Level</label>
                 <div class="option-grid">
-                  <div class="option-chip">Beginner</div>
-                  <div class="option-chip active">Intermediate</div>
-                  <div class="option-chip">Advanced</div>
+                  <div class="option-chip" onclick="selectSkillLevel(this)">Beginner</div>
+                  <div class="option-chip active" onclick="selectSkillLevel(this)">Intermediate</div>
+                  <div class="option-chip" onclick="selectSkillLevel(this)">Advanced</div>
                 </div>
               </div>
 
@@ -166,5 +166,6 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
+  <script src="./app.js"></script>
   </body>
 </html>
