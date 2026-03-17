@@ -23,23 +23,21 @@
 html,
 body {
   margin: 0;
-  height: 100%;
+  min-height: 100%;
   font-family: Arial, sans-serif;
   color: var(--text);
-  background: var(--bg);
-  overflow: hidden;
+  background: var(--surface);
+  overflow: auto;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block;
   padding: 0;
 }
 
 .app-shell {
   width: 100%;
-  max-width: 1180px;
+  max-width: 480px;
   margin: 0 auto;
 }
 
@@ -54,24 +52,15 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 393px;
-  height: 852px;
+  width: 100%;
+  min-height: 100dvh;
   margin: 0 auto;
-  overflow: hidden;
-  border-radius: 55px;
+  overflow: visible;
   background: var(--surface);
-  box-shadow: var(--shadow);
 }
 
 .status-bar {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: 59px;
-  padding: 0 28px;
-  font-size: 15px;
-  font-weight: 700;
+  display: none;
 }
 
 .status-notch {
@@ -107,8 +96,8 @@ body {
 
 .screen {
   flex: 1;
-  padding: 0 24px 120px;
-  overflow-y: auto;
+  padding: 16px 24px 96px;
+  overflow-y: visible;
 }
 
 .screen-compact {
@@ -1291,8 +1280,15 @@ body {
   color: rgba(255,255,255,0.85);
 }
 
+.score-btn-row {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+}
+
 .score-add-btn {
-  padding: 7px 14px;
+  padding: 7px 12px;
   border-radius: 999px;
   border: none;
   background: var(--lime);
@@ -1302,9 +1298,21 @@ body {
   cursor: pointer;
 }
 
+.score-sub-btn {
+  background: transparent;
+  border: 1.5px solid var(--lime);
+  color: var(--lime);
+}
+
 .score-add-btn-b {
   background: rgba(255,255,255,0.18);
   color: #fff;
+}
+
+.score-sub-btn-b {
+  background: transparent;
+  border: 1.5px solid rgba(255,255,255,0.45);
+  color: rgba(255,255,255,0.75);
 }
 
 .score-vs-col {
@@ -2122,17 +2130,20 @@ body {
 }
 
 .bottom-nav {
-  position: absolute;
-  left: 20px;
-  right: 20px;
-  bottom: 26px;
+  position: fixed;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 480px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 4px;
-  padding: 8px 8px 10px;
-  border-radius: 32px;
+  padding: 8px 16px 14px;
+  border-radius: 0;
   background: var(--teal-2);
   align-items: end;
+  z-index: 100;
 }
 
 .nav-item {
@@ -2212,14 +2223,7 @@ body {
 /* nav-leaderboard icon replaced with SVG in HTML */
 
 .home-indicator {
-  position: absolute;
-  left: 50%;
-  bottom: 8px;
-  width: 134px;
-  height: 5px;
-  transform: translateX(-50%);
-  border-radius: 999px;
-  background: #0d0d0d;
+  display: none;
 }
 
 .nav-icon {
@@ -2687,16 +2691,6 @@ body {
 }
 
 @media (max-width: 420px) {
-  body {
-    padding: 0;
-  }
-
-  .phone {
-    width: 100%;
-    height: 100dvh;
-    border-radius: 0;
-  }
-
   .hero-title {
     font-size: 48px;
   }
