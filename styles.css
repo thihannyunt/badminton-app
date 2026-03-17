@@ -24,12 +24,9 @@ html,
 body {
   margin: 0;
   height: 100%;
-  font-family: "Avenir Next", "Trebuchet MS", "Segoe UI", sans-serif;
+  font-family: Arial, sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(circle at top left, rgba(208, 235, 0, 0.08), transparent 24%),
-    radial-gradient(circle at bottom right, rgba(2, 75, 74, 0.18), transparent 28%),
-    var(--bg);
+  background: var(--bg);
   overflow: hidden;
 }
 
@@ -62,10 +59,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   border-radius: 55px;
-  background:
-    radial-gradient(circle at 85% 24%, rgba(208, 235, 0, 0.14), transparent 20%),
-    radial-gradient(circle at 10% 60%, rgba(2, 75, 74, 0.09), transparent 18%),
-    var(--surface);
+  background: var(--surface);
   box-shadow: var(--shadow);
 }
 
@@ -80,8 +74,7 @@ body {
   font-weight: 700;
 }
 
-.status-bar::after {
-  content: "";
+.status-notch {
   position: absolute;
   top: 12px;
   left: 50%;
@@ -105,37 +98,11 @@ body {
   gap: 5px;
 }
 
-.status-icons span {
-  display: block;
-  border-radius: 999px;
-  background: var(--text);
-}
-
-.status-icons span:nth-child(1) {
-  width: 4px;
-  height: 9px;
-  opacity: 0.7;
-}
-
-.status-icons span:nth-child(2) {
-  width: 4px;
-  height: 12px;
-}
-
-.status-icons span:nth-child(3) {
-  position: relative;
-  width: 23px;
-  height: 12px;
-  border: 1.7px solid var(--text);
-  background: transparent;
-}
-
-.status-icons span:nth-child(3)::after {
-  content: "";
-  position: absolute;
-  inset: 2px;
-  background: var(--text);
-  border-radius: 999px;
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--text);
 }
 
 .screen {
@@ -191,8 +158,7 @@ body {
   flex: none;
   border: 0;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+  background: #ffffff;
   color: var(--text);
   text-decoration: none;
 }
@@ -210,8 +176,7 @@ body {
   margin-left: auto;
   padding: 8px 12px;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.07);
+  background: #ffffff;
   color: var(--text);
   text-decoration: none;
   flex: none;
@@ -232,39 +197,8 @@ body {
   border-radius: 11px;
 }
 
-.chat-dot::before {
-  content: "";
-  position: absolute;
-  left: 4px;
-  bottom: -4px;
-  width: 8px;
-  height: 8px;
-  border-left: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(-25deg) skewX(-18deg);
-}
+/* chat-dot pseudo elements removed */
 
-.chat-dot::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 4px;
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: currentColor;
-  box-shadow: 6px 0 0 currentColor, 12px 0 0 currentColor;
-}
-
-.back-button::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  border-left: 2.5px solid currentColor;
-  border-bottom: 2.5px solid currentColor;
-  transform: rotate(45deg);
-  margin-left: 6px;
-}
 
 .bookmark-icon {
   position: relative;
@@ -281,8 +215,6 @@ body {
   right: 3px;
   top: 3px;
   bottom: 4px;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 72%, 0 100%);
-  background: transparent;
   border-top: 2px solid currentColor;
 }
 
@@ -334,7 +266,6 @@ body {
   height: 190px;
   border-radius: 42px;
   background: #b0abaa;
-  clip-path: polygon(24% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
 }
 
 .banner-copy {
@@ -501,8 +432,7 @@ body {
   margin-top: -126px;
   padding: 18px 24px 120px;
   border-radius: 34px 34px 0 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(16px);
+  background: #ffffff;
 }
 
 .sheet.tight {
@@ -1091,15 +1021,16 @@ body {
   color: var(--muted);
   font-size: 12px;
   font-weight: 700;
+  text-align: center;
 }
 
-.join-divider::before,
-.join-divider::after {
-  content: "";
+.join-divider-line {
   flex: 1;
   height: 1px;
   background: var(--line);
 }
+
+/* join-divider lines handled by border instead of pseudo-elements */
 
 /* ── Player Feedback ── */
 .feedback-player-card {
@@ -1133,13 +1064,10 @@ body {
   line-height: 1;
   color: var(--card-soft);
   cursor: pointer;
-  transition: color 0.1s;
-  -webkit-text-stroke: 1.5px var(--gold);
 }
 
 .fstar.active {
   color: var(--gold);
-  -webkit-text-stroke: 0;
 }
 
 /* ── Bookings page ── */
@@ -1178,7 +1106,6 @@ body {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.04em;
-  width: fit-content;
 }
 
 .booking-type-match {
@@ -1294,33 +1221,7 @@ body {
   color: var(--lime);
 }
 
-/* nav-booking icon (calendar) */
-.nav-booking {
-  position: relative;
-  width: 20px;
-  height: 20px;
-}
-
-.nav-booking::before {
-  content: "";
-  position: absolute;
-  inset: 3px 1px 1px;
-  border: 2px solid currentColor;
-  border-radius: 4px;
-}
-
-.nav-booking::after {
-  content: "";
-  position: absolute;
-  left: 5px;
-  right: 5px;
-  top: 1px;
-  height: 5px;
-  border-left: 2px solid currentColor;
-  border-right: 2px solid currentColor;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 2px;
-}
+/* nav-booking icon replaced with SVG in HTML */
 
 /* ── Score Tracking ── */
 .live-pill {
@@ -1924,14 +1825,7 @@ body {
   color: #fff;
 }
 
-.fab-link::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  border-top: 2.6px solid currentColor;
-  border-right: 2.6px solid currentColor;
-  transform: rotate(45deg) translate(-2px, 2px);
-}
+/* fab-link pseudo element removed */
 
 .form-stack,
 .stack {
@@ -2237,8 +2131,7 @@ body {
   gap: 4px;
   padding: 8px 8px 10px;
   border-radius: 32px;
-  background: rgba(7, 56, 56, 0.88);
-  backdrop-filter: blur(16px);
+  background: var(--teal-2);
   align-items: end;
 }
 
@@ -2287,8 +2180,7 @@ body {
   place-items: center;
   flex: none;
   margin-top: -22px;
-  border: 3px solid rgba(7, 56, 56, 0.9);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.36), 0 2px 8px rgba(208, 235, 0, 0.3);
+  border: 3px solid var(--teal-2);
   position: relative;
 }
 
@@ -2305,7 +2197,6 @@ body {
 .nav-center-fab.active .nav-fab-circle {
   background: var(--teal-2);
   color: var(--lime);
-  box-shadow: 0 6px 24px rgba(2, 75, 74, 0.5), 0 0 0 1px rgba(208, 235, 0, 0.3);
 }
 
 .nav-center-fab.active .nav-icon {
@@ -2318,37 +2209,7 @@ body {
   border-color: var(--teal-2);
 }
 
-/* ── Leaderboard (trophy) nav icon ── */
-.nav-leaderboard {
-  position: relative;
-  width: 22px;
-  height: 22px;
-}
-
-.nav-leaderboard::before {
-  content: "";
-  position: absolute;
-  left: 3px;
-  right: 3px;
-  top: 1px;
-  height: 11px;
-  border: 2px solid currentColor;
-  border-top: none;
-  border-radius: 0 0 10px 10px;
-}
-
-.nav-leaderboard::after {
-  content: "";
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 11px;
-  height: 2px;
-  background: currentColor;
-  border-radius: 1px;
-  box-shadow: 0 -5px 0 0 currentColor;
-}
+/* nav-leaderboard icon replaced with SVG in HTML */
 
 .home-indicator {
   position: absolute;
@@ -2367,69 +2228,7 @@ body {
   height: 22px;
 }
 
-.nav-home::before,
-.nav-home::after,
-.nav-history::before,
-.nav-history::after,
-.nav-profile::before,
-.nav-profile::after {
-  content: "";
-  position: absolute;
-}
-
-.nav-home::before {
-  inset: 7px 4px 3px;
-  border: 2px solid currentColor;
-  border-top: 0;
-  border-radius: 0 0 6px 6px;
-}
-
-.nav-home::after {
-  left: 3px;
-  right: 3px;
-  top: 2px;
-  height: 12px;
-  border-top: 2px solid currentColor;
-  border-left: 2px solid currentColor;
-  transform: rotate(45deg) skew(-8deg, -8deg);
-}
-
-.nav-history::before {
-  inset: 3px;
-  border: 2px solid currentColor;
-  border-radius: 50%;
-}
-
-.nav-history::after {
-  right: 0;
-  bottom: 0;
-  width: 7px;
-  height: 7px;
-  border-right: 2px solid currentColor;
-  border-bottom: 2px solid currentColor;
-  transform: rotate(-45deg);
-}
-
-.nav-profile::before {
-  left: 50%;
-  top: 2px;
-  width: 10px;
-  height: 10px;
-  transform: translateX(-50%);
-  border: 2px solid currentColor;
-  border-radius: 50%;
-}
-
-.nav-profile::after {
-  left: 4px;
-  right: 4px;
-  bottom: 2px;
-  height: 9px;
-  border: 2px solid currentColor;
-  border-bottom: 0;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
+/* nav icons replaced with SVG in HTML */
 
 .caption-pill {
   display: inline-flex;
@@ -2806,12 +2605,6 @@ body {
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.04em;
-  animation: searchPulse 2s ease-in-out infinite;
-}
-
-@keyframes searchPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.45; }
 }
 
 /* ── Contextual spacing helpers (replaces inline style="margin-top:Npx") ── */

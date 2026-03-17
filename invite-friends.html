@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Court Connect - Invite Friends</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   </head>
   <body>
     <main class="app-shell">
       <section class="phone">
         <header class="status-bar">
-          <span>9:41</span>
-          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="status-time">9:41</span>
+          <div class="status-notch" aria-hidden="true"></div>
+          <div class="status-icons" aria-hidden="true">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
+              <rect x="0" y="5" width="3" height="6" rx="1" opacity="0.4"/>
+              <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" opacity="0.7"/>
+              <rect x="9" y="0" width="3" height="11" rx="1"/>
+            </svg>
+            <svg width="24" height="11" viewBox="0 0 24 11" fill="none">
+              <rect x="0.5" y="0.5" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="2" y="2" width="15" height="7" rx="2" fill="currentColor"/>
+              <path d="M22 3.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
         </header>
 
         <section class="screen screen-compact">
           <div class="top-row">
-            <a class="back-button" href="create-session.html" aria-label="Back"></a>
+            <a class="back-button" href="create-session.html" aria-label="Back">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M8 10L4 6l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
             <div>
               <h1 class="screen-title">Invite Friends</h1>
               <p class="subtitle">Share your code or link to let players join.</p>
@@ -26,9 +43,8 @@
           <div class="sheet tight sheet-compact">
             <div class="stack stack-compact">
 
-              <!-- Session info banner -->
               <div class="confirmed-banner">
-                <div class="confirmed-check">🏸</div>
+                <div class="confirmed-check">✓</div>
                 <div class="confirmed-info">
                   <p class="confirmed-court">Tuesday Smashers</p>
                   <p class="confirmed-time">25 Mar 2026 · 7:00 PM – 9:00 PM</p>
@@ -36,34 +52,30 @@
                 <span class="caption-pill confirmed-pill">Doubles</span>
               </div>
 
-              <!-- Invite code -->
               <div class="invite-code-card">
                 <p class="join-lobby-label">Invite Code</p>
                 <p class="meta-note">Share this 6-digit code with your friends.</p>
                 <div class="invite-code-display">
-                  <span id="inviteCode" class="invite-code-text">CC7482</span>
-                  <button class="invite-action-btn" onclick="copyCode()" id="copyCodeBtn">Copy</button>
+                  <span class="invite-code-text">CC7482</span>
+                  <button class="invite-action-btn">Copy</button>
                 </div>
-                <button class="invite-regen-btn" onclick="regenCode()">↻ Generate New Code</button>
+                <button class="invite-regen-btn">↻ Generate New Code</button>
               </div>
 
-              <!-- Session link -->
               <div class="invite-code-card">
                 <p class="join-lobby-label">Session Link</p>
                 <p class="meta-note">Or share the full link directly.</p>
                 <div class="invite-link-row">
-                  <div class="field link-box invite-link-field" id="sessionLink">courtconnect.com/session/CC7482</div>
-                  <button class="invite-action-btn" onclick="copyLink()" id="copyLinkBtn">Copy</button>
+                  <div class="field link-box invite-link-field">courtconnect.com/session/CC7482</div>
+                  <button class="invite-action-btn">Copy</button>
                 </div>
               </div>
 
-              <!-- QR code placeholder -->
               <div class="invite-qr-card">
                 <div class="qr-box qr-box-sm">QR CODE</div>
                 <p class="meta-note meta-note-center">Players can scan to join instantly</p>
               </div>
 
-              <!-- Actions -->
               <div class="button-grid">
                 <a class="ghost-button booking-btn" href="create-session.html">Edit Session</a>
                 <a class="primary-button booking-btn" href="session-lobby.html">Go to Lobby</a>
@@ -83,7 +95,12 @@
           <a class="nav-item nav-center-fab" href="bookings.html">
             <span class="nav-fab-circle">
               <span class="nav-icon-wrap">
-                <span class="nav-icon nav-booking"></span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="2" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="6" y1="2" x2="6" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
                 <span class="nav-dot-badge">2</span>
               </span>
             </span>
@@ -99,44 +116,5 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
-
-    <script>
-      const prefix = 'CC';
-
-      function randCode() {
-        return prefix + Math.floor(1000 + Math.random() * 9000);
-      }
-
-      function setCode(code) {
-        document.getElementById('inviteCode').textContent = code;
-        document.getElementById('sessionLink').textContent = 'courtconnect.com/session/' + code;
-        resetBtns();
-      }
-
-      function regenCode() {
-        setCode(randCode());
-      }
-
-      function resetBtns() {
-        document.getElementById('copyCodeBtn').textContent = 'Copy';
-        document.getElementById('copyLinkBtn').textContent = 'Copy';
-      }
-
-      function copyCode() {
-        const code = document.getElementById('inviteCode').textContent;
-        navigator.clipboard?.writeText(code);
-        const btn = document.getElementById('copyCodeBtn');
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy', 2000);
-      }
-
-      function copyLink() {
-        const link = document.getElementById('sessionLink').textContent;
-        navigator.clipboard?.writeText(link);
-        const btn = document.getElementById('copyLinkBtn');
-        btn.textContent = 'Copied!';
-        setTimeout(() => btn.textContent = 'Copy', 2000);
-      }
-    </script>
   </body>
 </html>

@@ -5,18 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Court Connect - Player Feedback</title>
     <link rel="stylesheet" href="./styles.css" />
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
   </head>
   <body>
     <main class="app-shell">
       <section class="phone">
         <header class="status-bar">
-          <span>9:41</span>
-          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="status-time">9:41</span>
+          <div class="status-notch" aria-hidden="true"></div>
+          <div class="status-icons" aria-hidden="true">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
+              <rect x="0" y="5" width="3" height="6" rx="1" opacity="0.4"/>
+              <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" opacity="0.7"/>
+              <rect x="9" y="0" width="3" height="11" rx="1"/>
+            </svg>
+            <svg width="24" height="11" viewBox="0 0 24 11" fill="none">
+              <rect x="0.5" y="0.5" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="2" y="2" width="15" height="7" rx="2" fill="currentColor"/>
+              <path d="M22 3.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
         </header>
 
         <section class="screen screen-compact">
           <div class="top-row">
-            <a class="back-button" href="score-tracking.html" aria-label="Back"></a>
+            <a class="back-button" href="score-tracking.html" aria-label="Back">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M8 10L4 6l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
             <div>
               <h1 class="screen-title">Post Match Feedback</h1>
               <p class="subtitle">Rate players and add playstyle tags.</p>
@@ -26,7 +43,6 @@
           <div class="sheet tight sheet-compact">
             <div class="stack stack-compact">
 
-              <!-- Player card -->
               <div class="feedback-player-card">
                 <div class="lobby-avatar lobby-avatar-lg">A</div>
                 <div class="feedback-player-info">
@@ -35,30 +51,27 @@
                 </div>
               </div>
 
-              <!-- Star rating -->
               <div>
                 <label class="label">Your Rating</label>
-                <div class="feedback-stars" id="starRow" aria-label="Star rating">
-                  <span class="fstar active" data-v="1" onclick="rateStar(1)">★</span>
-                  <span class="fstar active" data-v="2" onclick="rateStar(2)">★</span>
-                  <span class="fstar active" data-v="3" onclick="rateStar(3)">★</span>
-                  <span class="fstar active" data-v="4" onclick="rateStar(4)">★</span>
-                  <span class="fstar active" data-v="5" onclick="rateStar(5)">★</span>
+                <div class="feedback-stars" aria-label="Star rating">
+                  <span class="fstar active">★</span>
+                  <span class="fstar active">★</span>
+                  <span class="fstar active">★</span>
+                  <span class="fstar active">★</span>
+                  <span class="fstar active">★</span>
                 </div>
               </div>
 
-              <!-- Playstyle tags -->
               <div>
                 <label class="label">Playstyle Tags</label>
                 <div class="tag-grid">
-                  <div class="tag-chip active" onclick="toggleTag(this)">Friendly</div>
-                  <div class="tag-chip" onclick="toggleTag(this)">Competitive</div>
-                  <div class="tag-chip active" onclick="toggleTag(this)">Beginner Friendly</div>
-                  <div class="tag-chip" onclick="toggleTag(this)">Strategic</div>
+                  <div class="tag-chip active">Friendly</div>
+                  <div class="tag-chip">Competitive</div>
+                  <div class="tag-chip active">Beginner Friendly</div>
+                  <div class="tag-chip">Strategic</div>
                 </div>
               </div>
 
-              <!-- Safety note -->
               <div class="info-row">
                 <div>
                   <strong>Safety option</strong>
@@ -66,7 +79,6 @@
                 </div>
               </div>
 
-              <!-- Actions -->
               <div class="button-grid">
                 <a class="ghost-button" href="index.html">Block Player</a>
                 <a class="primary-button" href="index.html">Submit</a>
@@ -86,7 +98,12 @@
           <a class="nav-item nav-center-fab" href="bookings.html">
             <span class="nav-fab-circle">
               <span class="nav-icon-wrap">
-                <span class="nav-icon nav-booking"></span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="2" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="6" y1="2" x2="6" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
                 <span class="nav-dot-badge">2</span>
               </span>
             </span>
@@ -102,16 +119,5 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
-
-    <script>
-      function rateStar(val) {
-        document.querySelectorAll('.fstar').forEach(s => {
-          s.classList.toggle('active', parseInt(s.dataset.v) <= val);
-        });
-      }
-      function toggleTag(el) {
-        el.classList.toggle('active');
-      }
-    </script>
   </body>
 </html>

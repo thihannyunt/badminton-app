@@ -11,12 +11,29 @@
     <main class="app-shell">
       <section class="phone">
         <header class="status-bar">
-          <span>9:41</span>
-          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+          <span class="status-time">9:41</span>
+          <div class="status-notch" aria-hidden="true"></div>
+          <div class="status-icons" aria-hidden="true">
+            <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor">
+              <rect x="0" y="5" width="3" height="6" rx="1" opacity="0.4"/>
+              <rect x="4.5" y="2.5" width="3" height="8.5" rx="1" opacity="0.7"/>
+              <rect x="9" y="0" width="3" height="11" rx="1"/>
+            </svg>
+            <svg width="24" height="11" viewBox="0 0 24 11" fill="none">
+              <rect x="0.5" y="0.5" width="20" height="10" rx="3" stroke="currentColor" stroke-width="1.2"/>
+              <rect x="2" y="2" width="15" height="7" rx="2" fill="currentColor"/>
+              <path d="M22 3.5v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
         </header>
+
         <section class="screen screen-compact">
           <div class="top-row">
-            <a class="back-button" href="index.html" aria-label="Back"></a>
+            <a class="back-button" href="index.html" aria-label="Back">
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                <path d="M8 10L4 6l4-4" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
             <div>
               <h1 class="screen-title">Find Match</h1>
               <p class="subtitle">Set your time, skill level, and join the matchmaking pool.</p>
@@ -26,17 +43,30 @@
           <div class="sheet tight sheet-compact">
             <div class="stack stack-compact">
 
-              <!-- Match Type -->
               <div>
                 <label class="label">Match Type</label>
                 <div class="match-type-grid">
-                  <div class="match-type-card active" onclick="selectMatchType(this)">
-                    <span class="match-type-icon">🏸</span>
+                  <div class="match-type-card active">
+                    <span class="match-type-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <ellipse cx="10" cy="9" rx="5.5" ry="6.5" stroke="currentColor" stroke-width="1.5"/>
+                        <line x1="10" y1="15.5" x2="13.5" y2="21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        <line x1="7" y1="6" x2="13" y2="12" stroke="currentColor" stroke-width="1"/>
+                        <line x1="4.5" y1="9" x2="15.5" y2="9" stroke="currentColor" stroke-width="1"/>
+                      </svg>
+                    </span>
                     <strong class="match-type-name">Singles</strong>
                     <span class="match-type-desc">1 vs 1</span>
                   </div>
-                  <div class="match-type-card" onclick="selectMatchType(this)">
-                    <span class="match-type-icon">👥</span>
+                  <div class="match-type-card">
+                    <span class="match-type-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M4 20c0-3 2-5 5-5h2c3 0 5 2 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        <circle cx="16" cy="7" r="2.5" stroke="currentColor" stroke-width="1.5"/>
+                        <path d="M18 17c2 .3 4 1.5 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                      </svg>
+                    </span>
                     <strong class="match-type-name">Doubles</strong>
                     <span class="match-type-desc">2 vs 2</span>
                   </div>
@@ -48,30 +78,38 @@
                 <div class="field">25 March 2026</div>
               </div>
 
-              <!-- Start & End time -->
               <div class="create-row">
                 <div class="create-col">
                   <label class="label">Start Time</label>
-                  <div class="time-picker-field" id="startTime">
-                    <span class="time-picker-icon">🕖</span>
+                  <div class="time-picker-field">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
                     <span class="time-picker-value">7:00 PM</span>
                     <span class="time-picker-arrow">›</span>
                   </div>
                 </div>
                 <div class="create-col">
                   <label class="label">End Time</label>
-                  <div class="time-picker-field" id="endTime">
-                    <span class="time-picker-icon">🕘</span>
+                  <div class="time-picker-field">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="6" stroke="currentColor" stroke-width="1.5"/>
+                      <path d="M8 5v3l2 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
                     <span class="time-picker-value">9:00 PM</span>
                     <span class="time-picker-arrow">›</span>
                   </div>
                 </div>
               </div>
 
-              <!-- Duration hint -->
-              <div class="duration-hint" id="durationHint">
-                <span class="duration-icon">⏱</span>
-                <span id="durationText">2 hours session</span>
+              <div class="duration-hint">
+                <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                  <circle cx="7.5" cy="8.5" r="5.5" stroke="currentColor" stroke-width="1.5"/>
+                  <path d="M7.5 5v3.5l2 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="5.5" y1="1" x2="9.5" y2="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>2 hours session</span>
               </div>
 
               <div>
@@ -92,9 +130,11 @@
               </div>
 
               <a class="primary-button" href="waiting-pool.html">Join Match Pool</a>
+
             </div>
           </div>
         </section>
+
         <nav class="bottom-nav" aria-label="Bottom navigation">
           <a class="nav-item" href="index.html">
             <span>Home</span>
@@ -105,7 +145,12 @@
           <a class="nav-item nav-center-fab" href="bookings.html">
             <span class="nav-fab-circle">
               <span class="nav-icon-wrap">
-                <span class="nav-icon nav-booking"></span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="2" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1.5"/>
+                  <line x1="6" y1="2" x2="6" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <line x1="14" y1="2" x2="14" y2="6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
                 <span class="nav-dot-badge">2</span>
               </span>
             </span>
@@ -121,15 +166,5 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
-  <!-- Time picker bottom sheet -->
-  <div class="time-sheet-overlay" id="timeOverlay" onclick="closeTimePicker()"></div>
-  <div class="time-sheet" id="timeSheet">
-    <div class="time-sheet-handle"></div>
-    <p class="time-sheet-title" id="timeSheetTitle">Select Start Time</p>
-    <div class="time-slot-grid" id="timeSlotGrid"></div>
-    <button class="primary-button" onclick="closeTimePicker()">Confirm</button>
-  </div>
-
-
   </body>
 </html>
