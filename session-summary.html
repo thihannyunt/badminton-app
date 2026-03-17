@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Court Connect - Match Summary</title>
+    <title>Court Connect - Match Result</title>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
@@ -19,38 +19,83 @@
             <a class="back-button" href="history.html" aria-label="Back"></a>
             <div>
               <h1 class="screen-title">Match Result</h1>
-              <p class="subtitle">Court 3 · 25 Mar 2026 · 7:00 PM</p>
+              <p class="subtitle">25 Mar 2026 · Court 3</p>
             </div>
           </div>
 
           <div class="sheet tight sheet-compact">
             <div class="stack stack-compact">
 
-              <!-- Result banner -->
-              <div class="summary-card lime">
-                <div class="summary-meta">
-                  <p class="caption-pill">You Won</p>
-                  <div class="spacer-8"></div>
-                  <h3>15 – 12</h3>
-                  <p>Intermediate · Court 3</p>
+              <!-- Session banner: court + start/end time -->
+              <div class="confirmed-banner">
+                <div class="confirmed-check">✓</div>
+                <div class="confirmed-info">
+                  <p class="confirmed-court">Court 3 · Intermediate</p>
+                  <p class="confirmed-time">7:00 PM – 9:00 PM &nbsp;·&nbsp; 2 hr session</p>
+                </div>
+                <span class="caption-pill confirmed-pill">Done</span>
+              </div>
+
+              <!-- Score result -->
+              <div class="result-score-card">
+                <div class="result-score-top">
+                  <span class="caption-pill">You Won</span>
+                </div>
+                <div class="result-score-row">
+                  <div class="result-score-team">
+                    <span class="result-team-label">Team A</span>
+                    <span class="result-score-big">15</span>
+                  </div>
+                  <span class="result-score-dash">–</span>
+                  <div class="result-score-team result-score-team-b">
+                    <span class="result-team-label">Team B</span>
+                    <span class="result-score-big result-score-big-b">12</span>
+                  </div>
                 </div>
               </div>
 
-              <!-- Teams -->
-              <div class="split-layout">
-                <div class="team-box">
-                  <h3>Team A</h3>
-                  <ul>
-                    <li>Alex</li>
-                    <li>Ken</li>
-                  </ul>
+              <!-- Match detail chips -->
+              <div class="match-detail-row match-detail-two">
+                <div class="match-detail-item">
+                  <span class="match-detail-icon">⏱</span>
+                  <span class="match-detail-text">2 hr duration</span>
                 </div>
-                <div class="team-box dark">
-                  <h3>Team B</h3>
-                  <ul>
-                    <li>Sara</li>
-                    <li>Mike</li>
-                  </ul>
+                <div class="match-detail-item">
+                  <span class="match-detail-icon">🏸</span>
+                  <span class="match-detail-text">Doubles</span>
+                </div>
+              </div>
+
+              <!-- Teams with avatars -->
+              <div class="vs-card">
+                <div class="vs-team">
+                  <div class="vs-team-label">Team A</div>
+                  <div class="vs-players">
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar">A</div>
+                      <strong>Alex</strong>
+                    </div>
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar">K</div>
+                      <strong>Ken</strong>
+                    </div>
+                  </div>
+                </div>
+                <div class="vs-divider">
+                  <span class="vs-badge">VS</span>
+                </div>
+                <div class="vs-team">
+                  <div class="vs-team-label team-b">Team B</div>
+                  <div class="vs-players">
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar rotation-av-b">S</div>
+                      <strong>Sara</strong>
+                    </div>
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar rotation-av-b">M</div>
+                      <strong>Mike</strong>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -65,8 +110,11 @@
                 </div>
               </div>
 
-              <!-- Back to history -->
-              <a class="primary-button" href="history.html">Back to History</a>
+              <!-- Actions -->
+              <div class="button-grid">
+                <a class="ghost-button" href="history.html">History</a>
+                <a class="primary-button" href="player-feedback.html">Rate Players</a>
+              </div>
 
             </div>
           </div>

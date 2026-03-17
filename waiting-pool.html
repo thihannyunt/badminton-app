@@ -14,54 +14,79 @@
           <span>9:41</span>
           <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
         </header>
-        <section class="screen">
+
+        <section class="screen screen-compact">
           <div class="top-row">
             <a class="back-button" href="find-match.html" aria-label="Back"></a>
             <div>
-              <h1 class="screen-title">Waiting Pool</h1>
-              <p class="subtitle">Your time slot is live while the system completes your group.</p>
+              <h1 class="screen-title">Finding Match</h1>
+              <p class="subtitle">Searching for players · 7:00 PM slot</p>
             </div>
+            <span class="searching-pill">● Live</span>
           </div>
 
-          <div class="sheet tight">
-            <div class="stack">
-              <div class="panel-card dark">
-                <div class="panel-meta">
-                  <h3>7:00 PM Match Queue</h3>
-                  <p>Match Time: 7:00 PM</p>
-                  <p>Court: TBD</p>
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Session status card -->
+              <div class="lobby-status-card">
+                <div class="lobby-status-top">
+                  <span class="caption-pill">Searching</span>
+                  <span class="lobby-count">2 / 4</span>
+                </div>
+                <div class="progress-bar" aria-hidden="true">
+                  <span style="width:50%"></span>
+                </div>
+                <div class="lobby-status-meta">
+                  <span>🕖 7:00 – 9:00 PM</span>
+                  <span>⚡ Intermediate</span>
                 </div>
               </div>
 
+              <!-- Players in queue -->
               <div class="list-card">
-                <strong>Players Joined</strong>
-                <div class="list-item">
-                  <strong>1. Alex</strong>
-                  <span>Intermediate</span>
+                <strong>Players in Queue</strong>
+                <div class="lobby-player-item">
+                  <div class="lobby-avatar">A</div>
+                  <strong>Alex</strong>
+                  <span class="lobby-badge in">✓ In</span>
                 </div>
-                <div class="list-item">
-                  <strong>2. Ken</strong>
-                  <span>Intermediate</span>
+                <div class="lobby-player-item">
+                  <div class="lobby-avatar">K</div>
+                  <strong>Ken</strong>
+                  <span class="lobby-badge in">✓ In</span>
+                </div>
+                <div class="lobby-player-item">
+                  <div class="lobby-avatar lobby-avatar-empty">—</div>
+                  <span class="meta-note">Waiting...</span>
+                  <span class="lobby-badge waiting">Searching</span>
+                </div>
+                <div class="lobby-player-item">
+                  <div class="lobby-avatar lobby-avatar-empty">—</div>
+                  <span class="meta-note">Waiting...</span>
+                  <span class="lobby-badge waiting">Searching</span>
                 </div>
               </div>
 
-              <div class="progress-card">
-                <div>
-                  <span class="meta-note">Waiting For</span>
-                  <strong>2 more players</strong>
-                </div>
-                <div class="progress-bar" aria-hidden="true"><span style="width: 50%"></span></div>
+              <!-- Timing hint -->
+              <div class="duration-hint">
+                <span class="duration-icon">⏱</span>
+                <span>2 hr session · Court assigned on confirmation</span>
               </div>
 
-              <div class="page-links">
-                <a href="match-confirmed.html">Preview match confirmation</a>
-                <a href="find-match.html">Edit your preferences</a>
+              <!-- Secondary actions -->
+              <div class="button-grid">
+                <a class="ghost-button booking-btn" href="find-match.html">Edit Prefs</a>
+                <a class="ghost-button booking-btn" href="match-confirmed.html">Preview</a>
               </div>
 
+              <!-- Cancel -->
               <a class="danger-button" href="find-match.html">Cancel Match</a>
+
             </div>
           </div>
         </section>
+
         <nav class="bottom-nav" aria-label="Bottom navigation">
           <a class="nav-item" href="index.html">
             <span class="nav-icon nav-home"></span>

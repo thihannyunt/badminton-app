@@ -2494,6 +2494,212 @@ body {
   height: 16px;
 }
 
+/* ── Session summary result score card ── */
+.result-score-card {
+  padding: 16px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #e8f34a 0%, #d5ec00 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.result-score-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.result-score-top .caption-pill {
+  background: rgba(2, 75, 74, 0.14);
+  color: var(--teal);
+}
+
+.result-score-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.result-score-team {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.result-score-team-b {
+  align-items: flex-end;
+}
+
+.result-team-label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+  opacity: 0.7;
+}
+
+.result-score-big {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1;
+  color: var(--teal);
+}
+
+.result-score-big-b {
+  opacity: 0.45;
+}
+
+.result-score-dash {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--teal);
+  opacity: 0.4;
+}
+
+/* ── Avatar size variants ── */
+.lobby-avatar-lg {
+  width: 46px;
+  height: 46px;
+  font-size: 16px;
+}
+
+.lobby-avatar-sm {
+  width: 28px;
+  height: 28px;
+  font-size: 10px;
+}
+
+.lobby-avatar-empty {
+  background: var(--card-soft);
+  color: var(--muted);
+}
+
+/* ── Result pill — inline Won / Lost badge in list items ── */
+.result-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+  flex: none;
+  background: var(--card-soft);
+  color: var(--muted);
+}
+
+.result-pill.win {
+  background: rgba(63, 167, 106, 0.14);
+  color: var(--success);
+}
+
+/* ── Option chip compact tag variant (inline with row content) ── */
+.option-chip-tag {
+  min-height: 32px;
+  padding: 5px 14px;
+  font-size: 13px;
+}
+
+/* ── Searching / live status pill (waiting pool) ── */
+.searching-pill {
+  flex: none;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: rgba(242, 193, 75, 0.18);
+  color: #7a5500;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  animation: searchPulse 2s ease-in-out infinite;
+}
+
+@keyframes searchPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* ── Contextual spacing helpers (replaces inline style="margin-top:Npx") ── */
+.lobby-status-card .progress-bar {
+  margin-top: 10px;
+}
+
+.lobby-status-meta {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.lobby-status-meta span {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+.booking-players .progress-bar {
+  margin-top: 6px;
+}
+
+.time-sheet .primary-button {
+  margin-top: 14px;
+}
+
+.invite-code-card .meta-note {
+  margin-bottom: 10px;
+}
+
+.meta-note-center {
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ── Lobby hub navigation buttons ── */
+.lobby-nav-btn {
+  min-height: 88px;
+  justify-content: flex-start;
+  border-radius: 20px;
+}
+
+/* ── Lobby hub join form spacing ── */
+.join-lobby-card .meta-note {
+  margin-bottom: 10px;
+}
+
+.join-link-btn-mt {
+  margin-top: 10px;
+}
+
+.join-preview-label {
+  margin-top: 4px;
+}
+
+.join-preview-confirm {
+  margin-top: 8px;
+}
+
+/* ── Create session time sheet spacing ── */
+.create-session-sheet .primary-button {
+  margin-top: 14px;
+}
+
+.qr-box-sm {
+  min-height: 120px;
+}
+
+/* ── Compact mode: tighten summary-card heading ── */
+.sheet-compact .summary-card h3 {
+  font-size: 22px;
+  line-height: 1.1;
+}
+
+/* ── Compact mode: tighten team-box heading ── */
+.sheet-compact .team-box h3 {
+  font-size: 15px;
+  margin-bottom: 8px;
+}
+
 @media (max-width: 420px) {
   body {
     padding: 0;

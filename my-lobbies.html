@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - My Lobbies</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="lobby-hub.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">My Lobbies</h1>
+              <p class="subtitle">Lobbies you created.</p>
+            </div>
+            <span class="booking-count-pill">2 active</span>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Active lobby -->
+              <div class="lobby-list-card">
+                <div class="lobby-list-top">
+                  <div>
+                    <p class="lobby-list-name">Tuesday Smashers</p>
+                    <p class="meta-note">25 Mar 2026 · 7:00 PM – 9:00 PM · Court 3</p>
+                  </div>
+                  <span class="result-badge win">Active</span>
+                </div>
+                <div class="lobby-list-meta">
+                  <span>👥 Doubles</span>
+                  <span>⚡ Intermediate</span>
+                  <span>2 / 4 joined</span>
+                </div>
+                <div class="lobby-list-avatars">
+                  <div class="lobby-avatar lobby-avatar-sm">A</div>
+                  <div class="lobby-avatar lobby-avatar-sm">K</div>
+                  <div class="booking-av-empty"></div>
+                  <div class="booking-av-empty"></div>
+                </div>
+                <div class="button-grid">
+                  <a class="ghost-button booking-btn" href="invite-friends.html">Invite</a>
+                  <a class="primary-button booking-btn" href="session-lobby.html">Open Lobby</a>
+                </div>
+              </div>
+
+              <!-- Pending lobby -->
+              <div class="lobby-list-card">
+                <div class="lobby-list-top">
+                  <div>
+                    <p class="lobby-list-name">Friday Night Rally</p>
+                    <p class="meta-note">28 Mar 2026 · 8:00 PM – 10:00 PM · Court 1</p>
+                  </div>
+                  <span class="result-badge">Pending</span>
+                </div>
+                <div class="lobby-list-meta">
+                  <span>🏸 Singles</span>
+                  <span>⚡ Advanced</span>
+                  <span>1 / 2 joined</span>
+                </div>
+                <div class="lobby-list-avatars">
+                  <div class="lobby-avatar lobby-avatar-sm">A</div>
+                  <div class="booking-av-empty"></div>
+                </div>
+                <div class="button-grid">
+                  <a class="ghost-button booking-btn" href="invite-friends.html">Invite</a>
+                  <a class="primary-button booking-btn" href="session-lobby.html">Open Lobby</a>
+                </div>
+              </div>
+
+              <!-- Create another -->
+              <a class="ghost-button" href="create-session.html">＋ Create Another Lobby</a>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

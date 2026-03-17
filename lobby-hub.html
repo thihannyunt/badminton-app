@@ -38,107 +38,26 @@
                 <span class="time-picker-arrow">›</span>
               </a>
 
-              <!-- Tab switcher -->
-              <div class="lobby-tab-row">
-                <button class="lobby-tab active" onclick="switchTab(this,'my')">My Lobbies</button>
-                <button class="lobby-tab" onclick="switchTab(this,'join')">Join Lobby</button>
+              <!-- Nav options -->
+              <div class="home-action-grid">
+                <a class="home-action-btn ghost lobby-nav-btn" href="my-lobbies.html">
+                  <span class="home-action-icon">📋</span>
+                  <span class="home-action-label">My Lobbies</span>
+                  <span class="home-action-sub">Lobbies you created</span>
+                </a>
+                <a class="home-action-btn ghost lobby-nav-btn" href="join-lobby.html">
+                  <span class="home-action-icon">🔗</span>
+                  <span class="home-action-label">Join Lobby</span>
+                  <span class="home-action-sub">Enter code or link</span>
+                </a>
               </div>
 
-              <!-- My Lobbies -->
-              <div id="tab-my" class="stack stack-compact">
-
-                <div class="lobby-list-card">
-                  <div class="lobby-list-top">
-                    <div>
-                      <p class="lobby-list-name">Tuesday Smashers</p>
-                      <p class="meta-note">25 Mar 2026 · 7:00 PM – 9:00 PM · Court 3</p>
-                    </div>
-                    <span class="result-badge win">Active</span>
-                  </div>
-                  <div class="lobby-list-meta">
-                    <span>👥 Doubles</span>
-                    <span>⚡ Intermediate</span>
-                    <span>2 / 4 joined</span>
-                  </div>
-                  <div class="lobby-list-avatars">
-                    <div class="lobby-avatar" style="width:28px;height:28px;font-size:10px;">A</div>
-                    <div class="lobby-avatar" style="width:28px;height:28px;font-size:10px;">K</div>
-                    <div class="booking-av-empty"></div>
-                    <div class="booking-av-empty"></div>
-                  </div>
-                  <div class="button-grid">
-                    <a class="ghost-button booking-btn" href="invite-friends.html">Invite</a>
-                    <a class="primary-button booking-btn" href="session-lobby.html">Open Lobby</a>
-                  </div>
+              <!-- Quick info row -->
+              <div class="info-row">
+                <div>
+                  <strong>How it works</strong>
+                  <div class="meta-note">Create a lobby → invite friends → play together at your booked court.</div>
                 </div>
-
-                <div class="lobby-list-card">
-                  <div class="lobby-list-top">
-                    <div>
-                      <p class="lobby-list-name">Friday Night Rally</p>
-                      <p class="meta-note">28 Mar 2026 · 8:00 PM – 10:00 PM · Court 1</p>
-                    </div>
-                    <span class="result-badge">Pending</span>
-                  </div>
-                  <div class="lobby-list-meta">
-                    <span>🏸 Singles</span>
-                    <span>⚡ Advanced</span>
-                    <span>1 / 2 joined</span>
-                  </div>
-                  <div class="lobby-list-avatars">
-                    <div class="lobby-avatar" style="width:28px;height:28px;font-size:10px;">A</div>
-                    <div class="booking-av-empty"></div>
-                  </div>
-                  <div class="button-grid">
-                    <a class="ghost-button booking-btn" href="invite-friends.html">Invite</a>
-                    <a class="primary-button booking-btn" href="session-lobby.html">Open Lobby</a>
-                  </div>
-                </div>
-
-              </div>
-
-              <!-- Join Lobby (hidden by default) -->
-              <div id="tab-join" class="stack stack-compact" style="display:none;">
-
-                <!-- Invite code entry -->
-                <div class="join-lobby-card">
-                  <p class="join-lobby-label">Enter Invite Code</p>
-                  <p class="meta-note" style="margin-bottom:10px;">Ask your friend for the 6-digit code from their invite.</p>
-                  <div class="join-code-row">
-                    <input class="join-code-input" id="codeInput" type="text" maxlength="6" placeholder="e.g. CC1234" oninput="onCodeInput(this)" />
-                    <button class="join-code-btn" id="lookupBtn" onclick="lookupLobby()" disabled>Look Up</button>
-                  </div>
-                </div>
-
-                <!-- Or paste link -->
-                <div class="join-divider"><span>or</span></div>
-
-                <div class="join-lobby-card">
-                  <p class="join-lobby-label">Paste Invite Link</p>
-                  <p class="meta-note" style="margin-bottom:10px;">Paste the full link sent to you by the lobby host.</p>
-                  <div class="field join-link-field" contenteditable="true" id="linkInput" oninput="onLinkInput()">courtconnect.com/session/</div>
-                  <button class="primary-button booking-btn" id="joinLinkBtn" style="margin-top:10px;" onclick="joinViaLink()" disabled>Join via Link</button>
-                </div>
-
-                <!-- Preview (hidden until code/link entered) -->
-                <div id="lobbyPreview" class="lobby-list-card" style="display:none;">
-                  <div class="lobby-list-top">
-                    <div>
-                      <p class="lobby-list-name" id="previewName">Tuesday Smashers</p>
-                      <p class="meta-note" id="previewMeta">25 Mar 2026 · 7:00 PM – 9:00 PM</p>
-                    </div>
-                    <span class="result-badge win">Found</span>
-                  </div>
-                  <div class="lobby-list-meta">
-                    <span>👥 Doubles</span>
-                    <span>⚡ Intermediate</span>
-                    <span id="previewSlots">2 / 4 joined</span>
-                  </div>
-                  <p class="join-lobby-label" style="margin-top:4px;">Your Name</p>
-                  <input class="join-name-input" id="nameInput" type="text" placeholder="Enter your name to join" />
-                  <a class="primary-button" style="margin-top:8px;" href="session-lobby.html">Confirm &amp; Join</a>
-                </div>
-
               </div>
 
             </div>
@@ -169,36 +88,5 @@
         <div class="home-indicator" aria-hidden="true"></div>
       </section>
     </main>
-
-    <script>
-      function switchTab(btn, tab) {
-        document.querySelectorAll('.lobby-tab').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        document.getElementById('tab-my').style.display   = tab === 'my'   ? '' : 'none';
-        document.getElementById('tab-join').style.display = tab === 'join' ? '' : 'none';
-      }
-
-      function onCodeInput(el) {
-        el.value = el.value.toUpperCase();
-        document.getElementById('lookupBtn').disabled = el.value.length < 6;
-      }
-
-      function onLinkInput() {
-        const val = document.getElementById('linkInput').textContent.trim();
-        document.getElementById('joinLinkBtn').disabled = val.length < 25;
-      }
-
-      function showPreview() {
-        document.getElementById('lobbyPreview').style.display = '';
-      }
-
-      function lookupLobby() {
-        showPreview();
-      }
-
-      function joinViaLink() {
-        showPreview();
-      }
-    </script>
   </body>
 </html>
