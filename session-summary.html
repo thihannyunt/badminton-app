@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Match Summary</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="history.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Match Result</h1>
+              <p class="subtitle">Court 3 · 25 Mar 2026 · 7:00 PM</p>
+            </div>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Result banner -->
+              <div class="summary-card lime">
+                <div class="summary-meta">
+                  <p class="caption-pill">You Won</p>
+                  <div class="spacer-8"></div>
+                  <h3>15 – 12</h3>
+                  <p>Intermediate · Court 3</p>
+                </div>
+              </div>
+
+              <!-- Teams -->
+              <div class="split-layout">
+                <div class="team-box">
+                  <h3>Team A</h3>
+                  <ul>
+                    <li>Alex</li>
+                    <li>Ken</li>
+                  </ul>
+                </div>
+                <div class="team-box dark">
+                  <h3>Team B</h3>
+                  <ul>
+                    <li>Sara</li>
+                    <li>Mike</li>
+                  </ul>
+                </div>
+              </div>
+
+              <!-- MVP -->
+              <div class="mvp-row">
+                <div>
+                  <span class="meta-note">Match MVP</span>
+                  <strong>Alex</strong>
+                </div>
+                <div class="stars" aria-label="Five star rating">
+                  <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+                </div>
+              </div>
+
+              <!-- Back to history -->
+              <a class="primary-button" href="history.html">Back to History</a>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item active" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

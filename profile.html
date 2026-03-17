@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Profile</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <!-- Profile hero -->
+          <div class="profile-hero">
+            <div class="profile-avatar-lg"></div>
+            <div class="profile-hero-info">
+              <h1 class="screen-title">Smiths Corisoun</h1>
+              <p class="subtitle">Intermediate · Badminton Player</p>
+            </div>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Stats row -->
+              <div class="profile-stats-row">
+                <div class="profile-stat">
+                  <strong>24</strong>
+                  <span>Matches</span>
+                </div>
+                <div class="profile-stat">
+                  <strong>4.8</strong>
+                  <span>Rating</span>
+                </div>
+                <div class="profile-stat">
+                  <strong>18</strong>
+                  <span>Wins</span>
+                </div>
+              </div>
+
+              <!-- Skill level -->
+              <div class="info-row">
+                <div>
+                  <strong>Skill Level</strong>
+                  <div class="meta-note">Intermediate</div>
+                </div>
+                <div class="option-chip active" style="min-height:34px;padding:6px 14px;font-size:13px;">Intermediate</div>
+              </div>
+
+              <!-- Playstyle tags -->
+              <div>
+                <label class="label">Playstyle</label>
+                <div class="tag-grid">
+                  <div class="tag-chip active">Friendly</div>
+                  <div class="tag-chip active">Beginner Friendly</div>
+                  <div class="tag-chip">Strategic</div>
+                  <div class="tag-chip">Competitive</div>
+                </div>
+              </div>
+
+              <!-- Recent activity -->
+              <div class="list-card">
+                <strong>Recent Matches</strong>
+                <div class="list-item">
+                  <strong>Court 3 · 7:00 PM</strong>
+                  <span class="tag-chip active" style="min-height:28px;padding:4px 12px;font-size:12px;border-radius:999px;">Won</span>
+                </div>
+                <div class="list-item">
+                  <strong>Court 1 · 6:00 PM</strong>
+                  <span class="tag-chip" style="min-height:28px;padding:4px 12px;font-size:12px;border-radius:999px;">Lost</span>
+                </div>
+              </div>
+
+              <!-- Edit profile button -->
+              <a class="primary-button" href="#">Edit Profile</a>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item active" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

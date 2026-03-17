@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Match Rotation</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="session-lobby.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Match Rotation</h1>
+              <p class="subtitle">6 players · 4 matches · 30 mins each</p>
+            </div>
+            <span class="live-pill">● Live</span>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Session overview -->
+              <div class="confirmed-banner">
+                <div class="confirmed-check">🕖</div>
+                <div class="confirmed-info">
+                  <p class="confirmed-court">7:00 PM – 9:00 PM</p>
+                  <p class="confirmed-time">Tuesday Smashers · Court 3</p>
+                </div>
+                <span class="caption-pill confirmed-pill">Match 1/4</span>
+              </div>
+
+              <!-- Match list -->
+              <div class="stack stack-compact" id="matchList">
+
+                <!-- Match 1 — ACTIVE -->
+                <a class="rotation-match-card active-match active-match-link" href="score-tracking.html">
+                  <div class="rotation-match-header">
+                    <div class="rotation-match-time-col">
+                      <span class="rotation-match-num">Match 1</span>
+                      <span class="rotation-match-time">7:00 – 7:30 PM</span>
+                    </div>
+                    <div class="rotation-match-badges">
+                      <span class="result-badge win">Now ›</span>
+                      <span class="match-level-badge">⚡ Inter</span>
+                    </div>
+                  </div>
+                  <div class="rotation-vs-row">
+                    <div class="rotation-team">
+                      <div class="rotation-team-label">Team A</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">S</div><span>Shiraq</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">P</div><span>PPM</span></div>
+                      </div>
+                    </div>
+                    <span class="vs-badge">VS</span>
+                    <div class="rotation-team rotation-team-right">
+                      <div class="rotation-team-label">Team B</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">Ps</div><span>Pyae Sone</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">M</div><span>Mike</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rotation-rest-row">
+                    <span class="meta-note">Resting:</span>
+                    <div class="lobby-avatar rotation-av-sm">T</div><span class="meta-note">THN</span>
+                    <div class="lobby-avatar rotation-av-sm">My</div><span class="meta-note">Myat</span>
+                  </div>
+                  <div class="active-match-cta">Track Score for this match →</div>
+                </a>
+
+                <!-- Match 2 -->
+                <div class="rotation-match-card">
+                  <div class="rotation-match-header">
+                    <div class="rotation-match-time-col">
+                      <span class="rotation-match-num">Match 2</span>
+                      <span class="rotation-match-time">7:30 – 8:00 PM</span>
+                    </div>
+                    <div class="rotation-match-badges">
+                      <span class="result-badge">Next</span>
+                      <span class="match-level-badge">⚡ Inter</span>
+                    </div>
+                  </div>
+                  <div class="rotation-vs-row">
+                    <div class="rotation-team">
+                      <div class="rotation-team-label">Team A</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">T</div><span>THN</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">My</div><span>Myat</span></div>
+                      </div>
+                    </div>
+                    <span class="vs-badge">VS</span>
+                    <div class="rotation-team rotation-team-right">
+                      <div class="rotation-team-label">Team B</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">S</div><span>Shiraq</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">Ps</div><span>Pyae Sone</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rotation-rest-row">
+                    <span class="meta-note">Resting:</span>
+                    <div class="lobby-avatar rotation-av-sm">P</div><span class="meta-note">PPM</span>
+                    <div class="lobby-avatar rotation-av-sm">M</div><span class="meta-note">Mike</span>
+                  </div>
+                </div>
+
+                <!-- Match 3 -->
+                <div class="rotation-match-card">
+                  <div class="rotation-match-header">
+                    <div class="rotation-match-time-col">
+                      <span class="rotation-match-num">Match 3</span>
+                      <span class="rotation-match-time">8:00 – 8:30 PM</span>
+                    </div>
+                    <div class="rotation-match-badges">
+                      <span class="result-badge">Upcoming</span>
+                      <span class="match-level-badge">⚡ Inter</span>
+                    </div>
+                  </div>
+                  <div class="rotation-vs-row">
+                    <div class="rotation-team">
+                      <div class="rotation-team-label">Team A</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">P</div><span>PPM</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">M</div><span>Mike</span></div>
+                      </div>
+                    </div>
+                    <span class="vs-badge">VS</span>
+                    <div class="rotation-team rotation-team-right">
+                      <div class="rotation-team-label">Team B</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">T</div><span>THN</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">S</div><span>Shiraq</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rotation-rest-row">
+                    <span class="meta-note">Resting:</span>
+                    <div class="lobby-avatar rotation-av-sm">Ps</div><span class="meta-note">Pyae Sone</span>
+                    <div class="lobby-avatar rotation-av-sm">My</div><span class="meta-note">Myat</span>
+                  </div>
+                </div>
+
+                <!-- Match 4 -->
+                <div class="rotation-match-card">
+                  <div class="rotation-match-header">
+                    <div class="rotation-match-time-col">
+                      <span class="rotation-match-num">Match 4</span>
+                      <span class="rotation-match-time">8:30 – 9:00 PM</span>
+                    </div>
+                    <div class="rotation-match-badges">
+                      <span class="result-badge">Upcoming</span>
+                      <span class="match-level-badge">⚡ Inter</span>
+                    </div>
+                  </div>
+                  <div class="rotation-vs-row">
+                    <div class="rotation-team">
+                      <div class="rotation-team-label">Team A</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">My</div><span>Myat</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av">Ps</div><span>Pyae Sone</span></div>
+                      </div>
+                    </div>
+                    <span class="vs-badge">VS</span>
+                    <div class="rotation-team rotation-team-right">
+                      <div class="rotation-team-label">Team B</div>
+                      <div class="rotation-team-players">
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">P</div><span>PPM</span></div>
+                        <div class="rotation-player"><div class="lobby-avatar rotation-av rotation-av-b">T</div><span>THN</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rotation-rest-row">
+                    <span class="meta-note">Resting:</span>
+                    <div class="lobby-avatar rotation-av-sm">S</div><span class="meta-note">Shiraq</span>
+                    <div class="lobby-avatar rotation-av-sm">M</div><span class="meta-note">Mike</span>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Invite Friends</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="create-session.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Invite Friends</h1>
+              <p class="subtitle">Share your code or link to let players join.</p>
+            </div>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Session info banner -->
+              <div class="confirmed-banner">
+                <div class="confirmed-check">🏸</div>
+                <div class="confirmed-info">
+                  <p class="confirmed-court">Tuesday Smashers</p>
+                  <p class="confirmed-time">25 Mar 2026 · 7:00 PM – 9:00 PM</p>
+                </div>
+                <span class="caption-pill confirmed-pill">Doubles</span>
+              </div>
+
+              <!-- Invite code -->
+              <div class="invite-code-card">
+                <p class="join-lobby-label">Invite Code</p>
+                <p class="meta-note" style="margin-bottom:10px;">Share this 6-digit code with your friends.</p>
+                <div class="invite-code-display">
+                  <span id="inviteCode" class="invite-code-text">CC7482</span>
+                  <button class="invite-action-btn" onclick="copyCode()" id="copyCodeBtn">Copy</button>
+                </div>
+                <button class="invite-regen-btn" onclick="regenCode()">↻ Generate New Code</button>
+              </div>
+
+              <!-- Session link -->
+              <div class="invite-code-card">
+                <p class="join-lobby-label">Session Link</p>
+                <p class="meta-note" style="margin-bottom:10px;">Or share the full link directly.</p>
+                <div class="invite-link-row">
+                  <div class="field link-box invite-link-field" id="sessionLink">courtconnect.com/session/CC7482</div>
+                  <button class="invite-action-btn" onclick="copyLink()" id="copyLinkBtn">Copy</button>
+                </div>
+              </div>
+
+              <!-- QR code placeholder -->
+              <div class="invite-qr-card">
+                <div class="qr-box" style="min-height:120px;">QR CODE</div>
+                <p class="meta-note" style="text-align:center;margin-top:6px;">Players can scan to join instantly</p>
+              </div>
+
+              <!-- Actions -->
+              <div class="button-grid">
+                <a class="ghost-button booking-btn" href="create-session.html">Edit Session</a>
+                <a class="primary-button booking-btn" href="session-lobby.html">Go to Lobby</a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <script>
+      const prefix = 'CC';
+
+      function randCode() {
+        return prefix + Math.floor(1000 + Math.random() * 9000);
+      }
+
+      function setCode(code) {
+        document.getElementById('inviteCode').textContent = code;
+        document.getElementById('sessionLink').textContent = 'courtconnect.com/session/' + code;
+        resetBtns();
+      }
+
+      function regenCode() {
+        setCode(randCode());
+      }
+
+      function resetBtns() {
+        document.getElementById('copyCodeBtn').textContent = 'Copy';
+        document.getElementById('copyLinkBtn').textContent = 'Copy';
+      }
+
+      function copyCode() {
+        const code = document.getElementById('inviteCode').textContent;
+        navigator.clipboard?.writeText(code);
+        const btn = document.getElementById('copyCodeBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      }
+
+      function copyLink() {
+        const link = document.getElementById('sessionLink').textContent;
+        navigator.clipboard?.writeText(link);
+        const btn = document.getElementById('copyLinkBtn');
+        btn.textContent = 'Copied!';
+        setTimeout(() => btn.textContent = 'Copy', 2000);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Match Confirmed</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="waiting-pool.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Match Confirmed</h1>
+              <p class="subtitle">Court assigned · Teams ready</p>
+            </div>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Hero confirmation banner -->
+              <div class="confirmed-banner">
+                <div class="confirmed-check">✓</div>
+                <div class="confirmed-info">
+                  <p class="confirmed-court">Court 3</p>
+                  <p class="confirmed-time">7:00 PM · 25 Mar 2026</p>
+                </div>
+                <span class="caption-pill confirmed-pill">Match Ready</span>
+              </div>
+
+              <!-- VS card -->
+              <div class="vs-card">
+                <div class="vs-team">
+                  <div class="vs-team-label">Team A</div>
+                  <div class="vs-players">
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar">A</div>
+                      <strong>Alex</strong>
+                    </div>
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar">K</div>
+                      <strong>Ken</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="vs-divider">
+                  <span class="vs-badge">VS</span>
+                </div>
+
+                <div class="vs-team">
+                  <div class="vs-team-label team-b">Team B</div>
+                  <div class="vs-players">
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar" style="background: linear-gradient(135deg, var(--teal), var(--teal-2)); color:#fff;">S</div>
+                      <strong>Sara</strong>
+                    </div>
+                    <div class="lobby-player-item">
+                      <div class="lobby-avatar" style="background: linear-gradient(135deg, var(--teal), var(--teal-2)); color:#fff;">M</div>
+                      <strong>Mike</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Match detail row -->
+              <div class="match-detail-row match-detail-two">
+                <div class="match-detail-item">
+                  <span class="match-detail-icon">🏸</span>
+                  <span class="match-detail-text">Doubles</span>
+                </div>
+                <div class="match-detail-item">
+                  <span class="match-detail-icon">⚡</span>
+                  <span class="match-detail-text">Intermediate</span>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <a class="primary-button" href="score-tracking.html">Start Match</a>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

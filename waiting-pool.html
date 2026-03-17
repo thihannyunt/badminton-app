@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Waiting Pool</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+        <section class="screen">
+          <div class="top-row">
+            <a class="back-button" href="find-match.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Waiting Pool</h1>
+              <p class="subtitle">Your time slot is live while the system completes your group.</p>
+            </div>
+          </div>
+
+          <div class="sheet tight">
+            <div class="stack">
+              <div class="panel-card dark">
+                <div class="panel-meta">
+                  <h3>7:00 PM Match Queue</h3>
+                  <p>Match Time: 7:00 PM</p>
+                  <p>Court: TBD</p>
+                </div>
+              </div>
+
+              <div class="list-card">
+                <strong>Players Joined</strong>
+                <div class="list-item">
+                  <strong>1. Alex</strong>
+                  <span>Intermediate</span>
+                </div>
+                <div class="list-item">
+                  <strong>2. Ken</strong>
+                  <span>Intermediate</span>
+                </div>
+              </div>
+
+              <div class="progress-card">
+                <div>
+                  <span class="meta-note">Waiting For</span>
+                  <strong>2 more players</strong>
+                </div>
+                <div class="progress-bar" aria-hidden="true"><span style="width: 50%"></span></div>
+              </div>
+
+              <div class="page-links">
+                <a href="match-confirmed.html">Preview match confirmation</a>
+                <a href="find-match.html">Edit your preferences</a>
+              </div>
+
+              <a class="danger-button" href="find-match.html">Cancel Match</a>
+            </div>
+          </div>
+        </section>
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

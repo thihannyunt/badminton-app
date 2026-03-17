@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - My Bookings</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <div>
+              <h1 class="screen-title">My Bookings</h1>
+              <p class="subtitle">Your upcoming scheduled matches.</p>
+            </div>
+            <span class="booking-count-pill">2 upcoming</span>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Booking type: Find Match -->
+              <div class="booking-card booking-card-active">
+
+                <div class="booking-type-tag booking-type-match">
+                  <span>🏸</span> Find Match
+                </div>
+
+                <div class="booking-card-header">
+                  <div>
+                    <p class="booking-date">Today · 25 Mar 2026</p>
+                    <p class="booking-slot">7:00 – 9:00 PM · Court 3</p>
+                  </div>
+                  <span class="result-badge win">Today</span>
+                </div>
+
+                <div class="booking-meta-row">
+                  <span class="match-detail-text">👥 Doubles</span>
+                  <span class="match-detail-text">⚡ Intermediate</span>
+                </div>
+
+                <div class="booking-players">
+                  <p class="booking-players-label">Players Joined <strong>4 / 4</strong></p>
+                  <div class="booking-avatars">
+                    <div class="lobby-avatar booking-av">A</div>
+                    <div class="lobby-avatar booking-av">K</div>
+                    <div class="lobby-avatar booking-av">S</div>
+                    <div class="lobby-avatar booking-av">M</div>
+                  </div>
+                  <div class="progress-bar" style="margin-top:6px;"><span style="width:100%"></span></div>
+                </div>
+
+                <a class="primary-button booking-btn" href="match-confirmed.html">Go to Match</a>
+
+              </div>
+
+              <!-- Booking type: Lobby -->
+              <div class="booking-card">
+
+                <div class="booking-type-tag booking-type-lobby">
+                  <span>👥</span> Lobby
+                </div>
+
+                <div class="booking-card-header">
+                  <div>
+                    <p class="booking-date">Fri · 28 Mar 2026</p>
+                    <p class="booking-slot">8:00 – 10:00 PM · Court 1</p>
+                  </div>
+                  <span class="result-badge">Upcoming</span>
+                </div>
+
+                <div class="booking-meta-row">
+                  <span class="match-detail-text">👥 Doubles</span>
+                  <span class="match-detail-text">⚡ Intermediate</span>
+                </div>
+
+                <div class="booking-players">
+                  <p class="booking-players-label">Players Joined <strong>6 / 6</strong></p>
+                  <div class="booking-avatars">
+                    <div class="lobby-avatar booking-av">S</div>
+                    <div class="lobby-avatar booking-av">P</div>
+                    <div class="lobby-avatar booking-av">Ps</div>
+                    <div class="lobby-avatar booking-av">M</div>
+                    <div class="lobby-avatar booking-av">T</div>
+                    <div class="lobby-avatar booking-av">My</div>
+                  </div>
+                  <div class="progress-bar" style="margin-top:6px;"><span style="width:100%"></span></div>
+                </div>
+
+                <div class="button-grid">
+                  <a class="ghost-button booking-btn" href="invite-friends.html">Invite</a>
+                  <a class="primary-button booking-btn" href="session-lobby.html">Open Lobby</a>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item active" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Create Session</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="index.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Create Session</h1>
+              <p class="subtitle">Set up your private group game.</p>
+            </div>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Session name -->
+              <div>
+                <label class="label">Session Name</label>
+                <div class="field">Tuesday Smashers</div>
+              </div>
+
+              <!-- Date -->
+              <div>
+                <label class="label">Date</label>
+                <div class="field">25 Mar 2026</div>
+              </div>
+
+              <!-- Start & End time side by side -->
+              <div class="create-row">
+                <div class="create-col">
+                  <label class="label">Start Time</label>
+                  <div class="time-picker-field" id="startTime">
+                    <span class="time-picker-icon">🕖</span>
+                    <span class="time-picker-value">7:00 PM</span>
+                    <span class="time-picker-arrow">›</span>
+                  </div>
+                </div>
+                <div class="create-col">
+                  <label class="label">End Time</label>
+                  <div class="time-picker-field" id="endTime">
+                    <span class="time-picker-icon">🕘</span>
+                    <span class="time-picker-value">9:00 PM</span>
+                    <span class="time-picker-arrow">›</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Duration hint -->
+              <div class="duration-hint" id="durationHint">
+                <span class="duration-icon">⏱</span>
+                <span id="durationText">2 hours session</span>
+              </div>
+
+              <!-- Match type -->
+              <div>
+                <label class="label">Match Type</label>
+                <div class="match-type-grid">
+                  <div class="match-type-card active" onclick="selectType(this)">
+                    <span class="match-type-icon">🏸</span>
+                    <strong class="match-type-name">Singles</strong>
+                    <span class="match-type-desc">1 vs 1</span>
+                  </div>
+                  <div class="match-type-card" onclick="selectType(this)">
+                    <span class="match-type-icon">👥</span>
+                    <strong class="match-type-name">Doubles</strong>
+                    <span class="match-type-desc">2 vs 2</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Player count -->
+              <div>
+                <label class="label">Max Players</label>
+                <div class="option-grid option-grid-four">
+                  <div class="option-chip" onclick="selectCount(this)">2</div>
+                  <div class="option-chip active" onclick="selectCount(this)">4</div>
+                  <div class="option-chip" onclick="selectCount(this)">6</div>
+                  <div class="option-chip" onclick="selectCount(this)">8</div>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <a class="primary-button" href="invite-friends.html">Generate Invite</a>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <!-- Time picker sheet -->
+    <div class="time-sheet-overlay" id="timeOverlay" onclick="closeTimePicker()"></div>
+    <div class="time-sheet" id="timeSheet">
+      <div class="time-sheet-handle"></div>
+      <p class="time-sheet-title" id="timeSheetTitle">Select Start Time</p>
+      <div class="time-slot-grid" id="timeSlotGrid"></div>
+      <button class="primary-button" style="margin-top:14px;" onclick="closeTimePicker()">Confirm</button>
+    </div>
+
+    <script>
+      function selectType(el) {
+        document.querySelectorAll('.match-type-card').forEach(c => c.classList.remove('active'));
+        el.classList.add('active');
+      }
+      function selectCount(el) {
+        document.querySelectorAll('.option-grid-four .option-chip').forEach(c => c.classList.remove('active'));
+        el.classList.add('active');
+      }
+
+      const slots = ['6:00 AM','7:00 AM','8:00 AM','9:00 AM','10:00 AM','11:00 AM',
+                     '12:00 PM','1:00 PM','2:00 PM','3:00 PM','4:00 PM','5:00 PM',
+                     '6:00 PM','7:00 PM','8:00 PM','9:00 PM','10:00 PM'];
+      let currentTarget = null;
+      let startVal = '7:00 PM', endVal = '9:00 PM';
+
+      function toIndex(t) { return slots.indexOf(t); }
+
+      function updateDuration() {
+        const si = toIndex(startVal), ei = toIndex(endVal);
+        const diff = ei - si;
+        const hint = document.getElementById('durationText');
+        const hintWrap = document.getElementById('durationHint');
+        if (diff <= 0) {
+          hint.textContent = 'End time must be after start time';
+          hintWrap.classList.add('duration-hint-warn');
+        } else {
+          const h = Math.floor(diff), half = diff % 1 !== 0;
+          hint.textContent = h + (half ? '.5' : '') + ' hour' + (h !== 1 || half ? 's' : '') + ' session';
+          hintWrap.classList.remove('duration-hint-warn');
+        }
+      }
+
+      function openTimePicker(target) {
+        currentTarget = target;
+        const isStart = target === 'start';
+        document.getElementById('timeSheetTitle').textContent = isStart ? 'Select Start Time' : 'Select End Time';
+        const current = isStart ? startVal : endVal;
+        const grid = document.getElementById('timeSlotGrid');
+        grid.innerHTML = slots.map(s =>
+          `<div class="time-slot-chip ${s === current ? 'active' : ''}" onclick="pickTime('${s}')">${s}</div>`
+        ).join('');
+        document.getElementById('timeOverlay').classList.add('open');
+        document.getElementById('timeSheet').classList.add('open');
+      }
+
+      function pickTime(val) {
+        if (currentTarget === 'start') {
+          startVal = val;
+          document.querySelector('#startTime .time-picker-value').textContent = val;
+        } else {
+          endVal = val;
+          document.querySelector('#endTime .time-picker-value').textContent = val;
+        }
+        document.querySelectorAll('.time-slot-chip').forEach(c => c.classList.remove('active'));
+        event.target.classList.add('active');
+        updateDuration();
+      }
+
+      function closeTimePicker() {
+        document.getElementById('timeOverlay').classList.remove('open');
+        document.getElementById('timeSheet').classList.remove('open');
+      }
+
+      document.getElementById('startTime').addEventListener('click', () => openTimePicker('start'));
+      document.getElementById('endTime').addEventListener('click', () => openTimePicker('end'));
+    </script>
+  </body>
+</html>

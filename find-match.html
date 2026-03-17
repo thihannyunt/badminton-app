@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Find Match</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="https://mcp.figma.com/mcp/html-to-design/capture.js" async></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="index.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Find Match</h1>
+              <p class="subtitle">Set your time, skill level, and join the matchmaking pool.</p>
+            </div>
+            <a class="icon-circle" href="waiting-pool.html" aria-label="Bookmark">
+              <span class="bookmark-icon"></span>
+            </a>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Match Type -->
+              <div>
+                <label class="label">Match Type</label>
+                <div class="match-type-grid">
+                  <div class="match-type-card active" onclick="selectMatchType(this)">
+                    <span class="match-type-icon">🏸</span>
+                    <strong class="match-type-name">Singles</strong>
+                    <span class="match-type-desc">1 vs 1</span>
+                  </div>
+                  <div class="match-type-card" onclick="selectMatchType(this)">
+                    <span class="match-type-icon">👥</span>
+                    <strong class="match-type-name">Doubles</strong>
+                    <span class="match-type-desc">2 vs 2</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <label class="label">Select Date</label>
+                <div class="field">25 March 2026</div>
+              </div>
+
+              <!-- Start & End time -->
+              <div class="create-row">
+                <div class="create-col">
+                  <label class="label">Start Time</label>
+                  <div class="time-picker-field" id="startTime">
+                    <span class="time-picker-icon">🕖</span>
+                    <span class="time-picker-value">7:00 PM</span>
+                    <span class="time-picker-arrow">›</span>
+                  </div>
+                </div>
+                <div class="create-col">
+                  <label class="label">End Time</label>
+                  <div class="time-picker-field" id="endTime">
+                    <span class="time-picker-icon">🕘</span>
+                    <span class="time-picker-value">9:00 PM</span>
+                    <span class="time-picker-arrow">›</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Duration hint -->
+              <div class="duration-hint" id="durationHint">
+                <span class="duration-icon">⏱</span>
+                <span id="durationText">2 hours session</span>
+              </div>
+
+              <div>
+                <label class="label">Skill Level</label>
+                <div class="option-grid">
+                  <div class="option-chip">Beginner</div>
+                  <div class="option-chip active">Intermediate</div>
+                  <div class="option-chip">Advanced</div>
+                </div>
+              </div>
+
+              <div class="progress-card">
+                <div>
+                  <span class="meta-note">Players Joined</span>
+                  <strong>2 / 4</strong>
+                </div>
+                <div class="progress-bar" aria-hidden="true"><span style="width: 50%"></span></div>
+              </div>
+
+              <a class="primary-button" href="waiting-pool.html">Join Match Pool</a>
+            </div>
+          </div>
+        </section>
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  <!-- Time picker bottom sheet -->
+  <div class="time-sheet-overlay" id="timeOverlay" onclick="closeTimePicker()"></div>
+  <div class="time-sheet" id="timeSheet">
+    <div class="time-sheet-handle"></div>
+    <p class="time-sheet-title" id="timeSheetTitle">Select Start Time</p>
+    <div class="time-slot-grid" id="timeSlotGrid"></div>
+    <button class="primary-button" style="margin-top:14px;" onclick="closeTimePicker()">Confirm</button>
+  </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Player Feedback</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <a class="back-button" href="score-tracking.html" aria-label="Back"></a>
+            <div>
+              <h1 class="screen-title">Post Match Feedback</h1>
+              <p class="subtitle">Rate players and add playstyle tags.</p>
+            </div>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Player card -->
+              <div class="feedback-player-card">
+                <div class="lobby-avatar" style="width:46px;height:46px;font-size:16px;">A</div>
+                <div class="feedback-player-info">
+                  <strong class="feedback-player-name">Alex</strong>
+                  <span class="meta-note">Court 3 · 7:00 PM</span>
+                </div>
+              </div>
+
+              <!-- Star rating -->
+              <div>
+                <label class="label">Your Rating</label>
+                <div class="feedback-stars" id="starRow" aria-label="Star rating">
+                  <span class="fstar active" data-v="1" onclick="rateStar(1)">★</span>
+                  <span class="fstar active" data-v="2" onclick="rateStar(2)">★</span>
+                  <span class="fstar active" data-v="3" onclick="rateStar(3)">★</span>
+                  <span class="fstar active" data-v="4" onclick="rateStar(4)">★</span>
+                  <span class="fstar active" data-v="5" onclick="rateStar(5)">★</span>
+                </div>
+              </div>
+
+              <!-- Playstyle tags -->
+              <div>
+                <label class="label">Playstyle Tags</label>
+                <div class="tag-grid">
+                  <div class="tag-chip active" onclick="toggleTag(this)">Friendly</div>
+                  <div class="tag-chip" onclick="toggleTag(this)">Competitive</div>
+                  <div class="tag-chip active" onclick="toggleTag(this)">Beginner Friendly</div>
+                  <div class="tag-chip" onclick="toggleTag(this)">Strategic</div>
+                </div>
+              </div>
+
+              <!-- Safety note -->
+              <div class="info-row">
+                <div>
+                  <strong>Safety option</strong>
+                  <div class="meta-note">You can block this player after submitting if needed.</div>
+                </div>
+              </div>
+
+              <!-- Actions -->
+              <div class="button-grid">
+                <a class="ghost-button" href="index.html">Block Player</a>
+                <a class="primary-button" href="index.html">Submit</a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+          <a class="nav-item" href="bookings.html">
+            <span class="nav-icon-wrap">
+              <span class="nav-icon nav-booking"></span>
+              <span class="nav-dot-badge">2</span>
+            </span>
+            <span>Bookings</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+
+    <script>
+      function rateStar(val) {
+        document.querySelectorAll('.fstar').forEach(s => {
+          s.classList.toggle('active', parseInt(s.dataset.v) <= val);
+        });
+      }
+      function toggleTag(el) {
+        el.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>
