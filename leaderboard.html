@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Court Connect - Leaderboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="phone">
+        <header class="status-bar">
+          <span>9:41</span>
+          <div class="status-icons" aria-hidden="true"><span></span><span></span><span></span></div>
+        </header>
+
+        <section class="screen screen-compact">
+          <div class="top-row">
+            <div>
+              <h1 class="screen-title">Leaderboard</h1>
+              <p class="subtitle">Top players by tier and win rate.</p>
+            </div>
+          </div>
+
+          <div class="sheet tight sheet-compact">
+            <div class="stack stack-compact">
+
+              <!-- Coming soon banner -->
+              <div class="coming-soon-card">
+                <div class="coming-soon-trophy">🏆</div>
+                <h2 class="coming-soon-title">Coming Soon</h2>
+                <p class="coming-soon-sub">We're building a fair ranking system based on your match results and win rate.</p>
+              </div>
+
+              <!-- Tier preview -->
+              <div>
+                <label class="label">Skill Tiers</label>
+                <div class="stack stack-compact">
+                  <div class="tier-preview-row">
+                    <span class="tier-dot tier-beginner"></span>
+                    <div class="tier-preview-info">
+                      <strong>Beginner</strong>
+                      <span class="meta-note">0 – 9 matches played</span>
+                    </div>
+                    <span class="coming-soon-chip">Soon</span>
+                  </div>
+                  <div class="tier-preview-row">
+                    <span class="tier-dot tier-intermediate"></span>
+                    <div class="tier-preview-info">
+                      <strong>Intermediate</strong>
+                      <span class="meta-note">10+ matches · ≥ 30% win rate</span>
+                    </div>
+                    <span class="coming-soon-chip">Soon</span>
+                  </div>
+                  <div class="tier-preview-row">
+                    <span class="tier-dot tier-advanced"></span>
+                    <div class="tier-preview-info">
+                      <strong>Advanced</strong>
+                      <span class="meta-note">30+ matches · ≥ 50% win rate</span>
+                    </div>
+                    <span class="coming-soon-chip">Soon</span>
+                  </div>
+                  <div class="tier-preview-row">
+                    <span class="tier-dot tier-competitive"></span>
+                    <div class="tier-preview-info">
+                      <strong>Competitive</strong>
+                      <span class="meta-note">60+ matches · ≥ 65% win rate</span>
+                    </div>
+                    <span class="coming-soon-chip">Soon</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Feature preview -->
+              <div class="list-card">
+                <strong>What's Coming</strong>
+                <div class="list-item">
+                  <strong>Top Players per Tier</strong>
+                  <span>Rankings</span>
+                </div>
+                <div class="list-item">
+                  <strong>Win Rate &amp; Match Stats</strong>
+                  <span>Per player</span>
+                </div>
+                <div class="list-item">
+                  <strong>Tier Promotion</strong>
+                  <span>Auto-upgrade</span>
+                </div>
+                <div class="list-item">
+                  <strong>Weekly Resets</strong>
+                  <span>Fresh starts</span>
+                </div>
+              </div>
+
+              <a class="primary-button" href="profile.html">View Your Stats</a>
+
+            </div>
+          </div>
+        </section>
+
+        <nav class="bottom-nav" aria-label="Bottom navigation">
+          <a class="nav-item" href="index.html">
+            <span class="nav-icon nav-home"></span>
+            <span>Home</span>
+          </a>
+          <a class="nav-item" href="history.html">
+            <span class="nav-icon nav-history"></span>
+            <span>History</span>
+          </a>
+          <a class="nav-item nav-center-fab" href="bookings.html">
+            <span class="nav-fab-circle">
+              <span class="nav-icon-wrap">
+                <span class="nav-icon nav-booking"></span>
+                <span class="nav-dot-badge">2</span>
+              </span>
+            </span>
+            <span>Book</span>
+          </a>
+          <a class="nav-item active" href="leaderboard.html">
+            <span class="nav-icon nav-leaderboard"></span>
+            <span>Ranks</span>
+          </a>
+          <a class="nav-item" href="profile.html">
+            <span class="nav-icon nav-profile"></span>
+            <span>Profile</span>
+          </a>
+        </nav>
+        <div class="home-indicator" aria-hidden="true"></div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -2211,29 +2211,120 @@ body {
   right: 20px;
   bottom: 26px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
-  padding: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4px;
+  padding: 8px 8px 10px;
   border-radius: 32px;
-  background: rgba(7, 56, 56, 0.8);
+  background: rgba(7, 56, 56, 0.88);
   backdrop-filter: blur(16px);
+  align-items: end;
 }
 
 .nav-item {
   display: grid;
   place-items: center;
   gap: 4px;
-  min-height: 54px;
-  border-radius: 22px;
+  min-height: 50px;
+  border-radius: 20px;
   text-decoration: none;
-  color: rgba(255, 255, 255, 0.86);
-  font-size: 11px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
   font-weight: 700;
 }
 
 .nav-item.active {
   background: var(--lime);
   color: var(--teal);
+}
+
+/* ── Center Bookings FAB ── */
+.nav-center-fab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 3px;
+  padding-bottom: 3px;
+  min-height: 50px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
+  font-weight: 700;
+  background: transparent;
+}
+
+.nav-fab-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--teal);
+  display: grid;
+  place-items: center;
+  flex: none;
+  margin-top: -22px;
+  border: 3px solid rgba(7, 56, 56, 0.9);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.36), 0 2px 8px rgba(208, 235, 0, 0.3);
+  position: relative;
+}
+
+.nav-center-fab .nav-icon {
+  color: var(--teal);
+}
+
+.nav-center-fab .nav-dot-badge {
+  background: var(--teal);
+  color: var(--lime);
+  border: 2px solid var(--lime);
+}
+
+.nav-center-fab.active .nav-fab-circle {
+  background: var(--teal-2);
+  color: var(--lime);
+  box-shadow: 0 6px 24px rgba(2, 75, 74, 0.5), 0 0 0 1px rgba(208, 235, 0, 0.3);
+}
+
+.nav-center-fab.active .nav-icon {
+  color: var(--lime);
+}
+
+.nav-center-fab.active .nav-dot-badge {
+  background: var(--lime);
+  color: var(--teal);
+  border-color: var(--teal-2);
+}
+
+/* ── Leaderboard (trophy) nav icon ── */
+.nav-leaderboard {
+  position: relative;
+  width: 22px;
+  height: 22px;
+}
+
+.nav-leaderboard::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  right: 3px;
+  top: 1px;
+  height: 11px;
+  border: 2px solid currentColor;
+  border-top: none;
+  border-radius: 0 0 10px 10px;
+}
+
+.nav-leaderboard::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 11px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  box-shadow: 0 -5px 0 0 currentColor;
 }
 
 .home-indicator {
@@ -2492,6 +2583,85 @@ body {
 
 .spacer-16 {
   height: 16px;
+}
+
+/* ── Leaderboard coming soon ── */
+.coming-soon-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-radius: 26px;
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-2) 100%);
+  color: #fff;
+  text-align: center;
+}
+
+.coming-soon-trophy {
+  font-size: 44px;
+  line-height: 1;
+}
+
+.coming-soon-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--lime);
+}
+
+.coming-soon-sub {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.78;
+  line-height: 1.5;
+  max-width: 260px;
+}
+
+.tier-preview-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+}
+
+.tier-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.tier-beginner   { background: #8bc34a; }
+.tier-intermediate { background: var(--gold); }
+.tier-advanced   { background: #2196f3; }
+.tier-competitive { background: var(--danger); }
+
+.tier-preview-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.tier-preview-info strong {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.coming-soon-chip {
+  font-size: 10px;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: rgba(2, 75, 74, 0.1);
+  color: var(--teal);
+  flex: none;
 }
 
 /* ── Session summary result score card ── */
