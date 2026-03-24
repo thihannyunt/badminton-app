@@ -86,8 +86,8 @@ function goToBookings() {
 
 /* ─── Score Tracking ─────────────────────────────────────────────────────── */
 
-var SCORE_TARGET = 15;
-var SCORE_WIN = 16;
+var SCORE_TARGET = 21;
+var SCORE_WIN = 21;
 var matchFinished = false;
 
 function adjustScore(team, delta) {
